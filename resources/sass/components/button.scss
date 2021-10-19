@@ -1,0 +1,10 @@
+.btn-e-blue{
+    color: #fff;
+    background-color: $e-blue;
+    border-color: $e-blue;
+    &:hover{
+        color: #fff;
+        background-color: $e-blue-darker;
+        border-color: $e-blue-darker;
+    }
+}

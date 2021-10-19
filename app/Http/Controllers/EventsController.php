@@ -10,4 +10,19 @@ class EventsController extends Controller
     {
         return Inertia::render('Event/Show');
     }
+
+    public function detail($id)
+    {
+        return Inertia::render('Event/Detail',['id'=>$id]);
+    }
+
+    public function showPayment($id)
+    {
+        return Inertia::render('Event/Payment', ['id'=>$id]);
+    }
+
+    public function orderHistory()
+    {
+        return Inertia::render('Event/OrderHistory');
+    }
 }

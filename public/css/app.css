@@ -1,4 +1,8 @@
 @charset "UTF-8";
+p, td, a, div {
+  font-size: 0.9rem;
+}
+
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -11288,8 +11292,27 @@ textarea.form-control-lg {
   justify-content: space-between;
 }
 
+.btn-e-blue {
+  color: #fff;
+  background-color: #30475E;
+  border-color: #30475E;
+}
+.btn-e-blue:hover {
+  color: #fff;
+  background-color: #1f2d3b;
+  border-color: #1f2d3b;
+}
+
 .app-container {
   max-width: 576px;
   width: 100%;
   margin: 0 auto;
+}
+
+.text-e-blue {
+  color: #30475E;
+}
+
+.bg-e-blue {
+  background-color: #30475E;
 }

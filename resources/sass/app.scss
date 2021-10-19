@@ -1,9 +1,20 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
+@import "components/color";
 @import "components/navbar";
+@import "components/button";
+
 
 .app-container{
     max-width: 576px;
     width:100%;
     margin:0 auto;
+}
+
+.text-e-blue{
+    color: $e-blue;
+}
+
+.bg-e-blue{
+    background-color: $e-blue;
 }

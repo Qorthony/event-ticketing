@@ -17170,6 +17170,22 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Auth/Login.svelte": [
+		"./resources/js/Pages/Auth/Login.svelte",
+		"resources_js_Pages_Auth_Login_svelte"
+	],
+	"./Event/Detail.svelte": [
+		"./resources/js/Pages/Event/Detail.svelte",
+		"resources_js_Pages_Event_Detail_svelte"
+	],
+	"./Event/OrderHistory.svelte": [
+		"./resources/js/Pages/Event/OrderHistory.svelte",
+		"resources_js_Pages_Event_OrderHistory_svelte"
+	],
+	"./Event/Payment.svelte": [
+		"./resources/js/Pages/Event/Payment.svelte",
+		"resources_js_Pages_Event_Payment_svelte"
+	],
 	"./Event/Show.svelte": [
 		"./resources/js/Pages/Event/Show.svelte",
 		"resources_js_Pages_Event_Show_svelte"
@@ -20379,7 +20395,7 @@ module.exports = JSON.parse('{"_from":"axios@^0.21.1","_id":"axios@0.21.4","_inB
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "resources_js_Pages_Event_Show_svelte") return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Auth_Login_svelte":1,"resources_js_Pages_Event_Detail_svelte":1,"resources_js_Pages_Event_OrderHistory_svelte":1,"resources_js_Pages_Event_Payment_svelte":1,"resources_js_Pages_Event_Show_svelte":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

@@ -10,40 +10,55 @@
         <a class="navbar-brand" use:inertia href="/">Event Ticketing Paltform</a>
         
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" use:inertia href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" use:inertia href="/">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href={'#'} id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                <li><a class="dropdown-item" use:inertia href="/">Action</a></li>
-                <li><a class="dropdown-item" use:inertia href="/">Another action</a></li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" use:inertia href="/">Something else here</a></li>
+            <div class="offcanvas-header bg-dark text-white justify-content-start">
+                <div>
+                    <img src="https://img.icons8.com/clouds/100/000000/scream.png" alt="avatar"/>
+                </div>
+                <div class="ps-2">
+                    <p class="mb-0">Salsabilla</p>
+                    <p>billa@gmail.com</p>
+                </div>
+                <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item d-flex align-items-center">
+                        <img class="icon-size" src="https://img.icons8.com/material-outlined/48/000000/home--v2.png" alt=""/>
+                        <a class="nav-link text-dark ms-1 active" aria-current="page" use:inertia href="/">Home</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <img class="icon-size" src="https://img.icons8.com/ios-glyphs/30/000000/time-machine--v2.png" alt=""/>
+                        <a class="nav-link text-dark ms-1" use:inertia href="/event/orderHistory">History Pemesanan</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <img class="icon-size" src="https://img.icons8.com/material/24/000000/property-time.png" alt=""/>
+                        <a class="nav-link text-dark ms-1" use:inertia href="/">Event Creator</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <img class="icon-size" src="https://img.icons8.com/material-two-tone/24/000000/handshake.png" alt=""/>
+                        <a class="nav-link text-dark ms-1" use:inertia href="/">Mitra</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <img class="icon-size" src="https://img.icons8.com/external-sbts2018-outline-sbts2018/58/000000/external-logout-social-media-basic-1-sbts2018-outline-sbts2018.png" alt=""/>
+                        <a class="nav-link text-dark ms-1" use:inertia href="/">Logout</a>
+                    </li>
                 </ul>
-            </li>
-            </ul>
-            <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
+            </div>
         </div>
     </div>
 </nav>
 <main class="app-container" style="padding-top: 5rem;">
     <slot />
 </main>
+
+
+<style>
+    .icon-size{
+        width:30px;
+        height: 30px;
+    }
+    ul > li{
+        margin-bottom: 0.8rem;
+    }
+</style>
