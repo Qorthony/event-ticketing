@@ -1,5 +1,5 @@
 <script>
-    import Layout from "../../Shared/Layout.svelte";
+    import Layout from "../../Shared/Layout/Layout.svelte";
     import { inertia } from "@inertiajs/inertia-svelte";
 </script>
 
@@ -9,7 +9,7 @@
             <div class="card mb-3">
                 <div class="card-header">
                     <div class="card-title">
-                        <h5 class="fw-bold">Pembayaran Tiket Event</h5> 
+                        <h5 class="fw-bold">Pembayaran Tiket Event</h5>
                     </div>
                 </div>
                 <div class="card-body">

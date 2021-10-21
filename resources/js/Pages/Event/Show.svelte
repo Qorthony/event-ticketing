@@ -1,5 +1,5 @@
 <script>
-    import Layout from "../../Shared/Layout.svelte";
+    import Layout from "../../Shared/Layout/Layout.svelte";
     import { inertia } from "@inertiajs/inertia-svelte";
 
     let events = [

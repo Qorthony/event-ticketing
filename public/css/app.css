@@ -11307,6 +11307,8 @@ textarea.form-control-lg {
   max-width: 576px;
   width: 100%;
   margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .text-e-blue {
