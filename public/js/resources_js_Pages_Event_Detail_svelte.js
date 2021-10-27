@@ -50,51 +50,78 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function create_default_slot(ctx) {
+  var div13;
   var div12;
-  var div11;
   var div0;
-  var img;
-  var img_src_value;
+  var img0;
+  var img0_src_value;
   var t0;
   var div2;
   var div1;
   var h5;
   var t2;
+  var div8;
   var div7;
   var div6;
-  var div5;
   var div3;
   var h60;
   var t4;
   var p0;
+  var img1;
+  var img1_src_value;
+  var t5;
+  var t6_value =
+  /*event*/
+  ctx[0].tanggal + "";
   var t6;
+  var t7;
   var p1;
+  var img2;
+  var img2_src_value;
+  var t8;
+  var t9_value =
+  /*event*/
+  ctx[0].waktu + "";
   var t9;
+  var t10;
+  var t11;
   var div4;
   var h61;
-  var t11;
+  var t13;
   var p2;
+  var img3;
+  var img3_src_value;
   var t14;
-  var div9;
-  var div8;
-  var h62;
+  var t15_value =
+  /*event*/
+  ctx[0].lokasi + "";
+  var t15;
   var t16;
+  var div5;
+  var h62;
+  var t18;
   var p3;
+  var t21;
+  var div10;
+  var div9;
+  var h63;
+  var t23;
+  var p4;
   var raw_value =
   /*event*/
   ctx[0].deskripsi + "";
-  var t17;
-  var div10;
+  var t24;
+  var div11;
   var a;
   var inertia_action;
   var mounted;
   var dispose;
   return {
     c: function c() {
+      div13 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       div12 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      div11 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       div0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      img = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("img");
+      img0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("img");
       t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       div1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
@@ -103,100 +130,139 @@ function create_default_slot(ctx) {
       /*event*/
       ctx[0].judul);
       t2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      div8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       div7 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       div6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       div3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       h60 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("h6");
       h60.textContent = "Tanggal & Waktu";
       t4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       p0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("p");
-      p0.textContent = "".concat(
-      /*event*/
-      ctx[0].tanggal);
-      t6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      img1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("img");
+      t5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      t6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(t6_value);
+      t7 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       p1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("p");
-      p1.textContent = "".concat(
-      /*event*/
-      ctx[0].waktu, " WIB");
-      t9 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      img2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("img");
+      t8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      t9 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(t9_value);
+      t10 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(" WIB");
+      t11 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       h61 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("h6");
-      h61.textContent = "Harga";
-      t11 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      h61.textContent = "Lokasi";
+      t13 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       p2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("p");
-      p2.textContent = "Rp. ".concat(
+      img3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("img");
+      t14 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      t15 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(t15_value);
+      t16 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+      h62 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("h6");
+      h62.textContent = "Harga";
+      t18 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      p3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("p");
+      p3.textContent = "Rp. ".concat(
       /*event*/
       ctx[0].harga);
-      t14 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-      div9 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      div8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      h62 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("h6");
-      h62.textContent = "Deskripsi";
-      t16 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-      p3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("p");
-      t17 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      t21 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div10 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+      div9 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+      h63 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("h6");
+      h63.textContent = "Deskripsi";
+      t23 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      p4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("p");
+      t24 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      div11 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       a = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("a");
       a.textContent = "Daftar";
-      if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img.src, img_src_value =
+      if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img0.src, img0_src_value =
       /*event*/
-      ctx[0].poster_url)) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "src", img_src_value);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "class", "card-img-top");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "alt", "...");
+      ctx[0].poster_url)) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img0, "src", img0_src_value);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img0, "class", "card-img-top");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img0, "alt", "...");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", "card mb-3");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(h5, "class", "card-title fw-bold");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", "card-body");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "card mb-3");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(h60, "class", "text-e-blue fw-bold");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(p0, "class", "mb-0");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img1, "class", "me-1");
+      if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img1.src, img1_src_value = "https://img.icons8.com/small/16/000000/calendar.png")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img1, "src", img1_src_value);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img1, "alt", "");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(p0, "class", "mb-0 d-flex align-items-center");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img2, "class", "me-1");
+      if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img2.src, img2_src_value = "https://img.icons8.com/small/16/000000/clock.png")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img2, "src", img2_src_value);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img2, "alt", "");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(p1, "class", "d-flex align-items-center");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "class", "col mb-2 col-sm-4");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(h61, "class", "text-e-blue fw-bold");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", "d-flex justify-content-between");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div6, "class", "card-body");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div7, "class", "card mb-3");
+      if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img3.src, img3_src_value = "https://img.icons8.com/small/16/000000/marker.png")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img3, "src", img3_src_value);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img3, "alt", "");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(p2, "class", "d-flex align-items-center");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "class", "col mb-2 col-sm-4");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(h62, "class", "text-e-blue fw-bold");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div8, "class", "card-body");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "class", "card mb-3");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", "col mb-2 col-sm-4");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div6, "class", "row");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div7, "class", "card-body");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div8, "class", "card mb-3");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(h63, "class", "text-e-blue fw-bold");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "class", "card-body");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div10, "class", "card mb-3");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "href", "/event/1/payment");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "class", "btn btn-e-blue btn-lg");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div10, "class", "d-grid gap-2");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div11, "class", "col-11");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div12, "class", "row justify-content-center mb-5");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div11, "class", "d-grid gap-2");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div12, "class", "col-11");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div13, "class", "row justify-content-center mb-5");
     },
     m: function m(target, anchor) {
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div12, anchor);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div12, div11);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div11, div0);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div0, img);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div11, t0);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div11, div2);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div13, anchor);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div13, div12);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div12, div0);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div0, img0);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div12, t0);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div12, div2);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, div1);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, h5);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div11, t2);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div11, div7);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div12, t2);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div12, div8);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, div7);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div7, div6);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, div5);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, div3);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, div3);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, h60);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, t4);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, p0);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, t6);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(p0, img1);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(p0, t5);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(p0, t6);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, t7);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, p1);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, t9);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, div4);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(p1, img2);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(p1, t8);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(p1, t9);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(p1, t10);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, t11);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, div4);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, h61);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, t11);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, t13);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, p2);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div11, t14);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div11, div9);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div9, div8);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, h62);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, t16);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, p3);
-      p3.innerHTML = raw_value;
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div11, t17);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div11, div10);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div10, a);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(p2, img3);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(p2, t14);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(p2, t15);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, t16);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, div5);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, h62);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, t18);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, p3);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div12, t21);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div12, div10);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div10, div9);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div9, h63);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div9, t23);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div9, p4);
+      p4.innerHTML = raw_value;
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div12, t24);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div12, div11);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div11, a);
 
       if (!mounted) {
         dispose = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.action_destroyer)(inertia_action = _inertiajs_inertia_svelte__WEBPACK_IMPORTED_MODULE_2__.inertia.call(null, a));
@@ -205,7 +271,7 @@ function create_default_slot(ctx) {
     },
     p: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
     d: function d(detaching) {
-      if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div12);
+      if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div13);
       mounted = false;
       dispose();
     }
@@ -271,6 +337,7 @@ function instance($$self) {
     jenis: "Konser",
     tanggal: "23 Aug 2021",
     waktu: "19:00",
+    lokasi: "Online",
     harga: 200000,
     poster_url: "https://www.namastra.co.id/img?src=9fa8a5b94738aa2ba3d214d77c0aff1e.jpg&width=1200&height=860",
     deskripsi: "Event ini sangat bermanfaat dan <strong>menarik</strong> untuk diikuti. Pesan tiketnya sekarang juga!"

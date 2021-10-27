@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventsController;
@@ -21,3 +23,12 @@ Route::get('/event', [EventsController::class,'show']);
 Route::get('/event/orderHistory', [EventsController::class, 'orderHistory']);
 Route::get('/event/{id}', [EventsController::class,'detail']);
 Route::get('/event/{id}/payment', [EventsController::class, 'showPayment']);
+
+
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index']);
+
+    Route::prefix('event')->group(function () {
+        Route::get('/', [EventController::class, 'index']);
+    });
+});
