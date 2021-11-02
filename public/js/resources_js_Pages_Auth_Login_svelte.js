@@ -49,26 +49,68 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+function create_if_block(ctx) {
+  var div;
+  var t_value =
+  /*$form*/
+  ctx[0].errors.email + "";
+  var t;
+  return {
+    c: function c() {
+      div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+      t = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(t_value);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "alert-danger");
+    },
+    m: function m(target, anchor) {
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, t);
+    },
+    p: function p(ctx, dirty) {
+      if (dirty &
+      /*$form*/
+      1 && t_value !== (t_value =
+      /*$form*/
+      ctx[0].errors.email + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t, t_value);
+    },
+    d: function d(detaching) {
+      if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
+    }
+  };
+} // (17:0) <AuthLayout title="Login">
+
+
 function create_default_slot(ctx) {
   var div6;
   var div5;
   var div0;
   var t0;
+  var form_1;
+  var t1;
   var div1;
-  var t5;
+  var label0;
+  var t3;
+  var input0;
+  var t4;
   var div2;
-  var t8;
+  var label1;
+  var t6;
+  var input1;
+  var t7;
   var div4;
-  var a0;
-  var inertia_action;
-  var t10;
+  var button;
+  var t8;
+  var button_disabled_value;
+  var t9;
   var div3;
-  var small1;
-  var t12;
-  var a1;
-  var inertia_action_1;
+  var small;
+  var t11;
+  var a;
+  var inertia_action;
   var mounted;
   var dispose;
+  var if_block =
+  /*$form*/
+  ctx[0].errors.email && create_if_block(ctx);
   return {
     c: function c() {
       div6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
@@ -76,29 +118,52 @@ function create_default_slot(ctx) {
       div0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       div0.innerHTML = "<img src=\"images/icons/icon_auth.png\" alt=\"icon\"/>";
       t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      form_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("form");
+      if (if_block) if_block.c();
+      t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      div1.innerHTML = "<label for=\"email\" class=\"form-label\">Email</label> \n                <input type=\"email\" class=\"form-control\" id=\"email\"/> \n                <small class=\"text-muted\">We\u2019ll never share your email with anyone else</small>";
-      t5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      label0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("label");
+      label0.textContent = "Email";
+      t3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      input0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("input");
+      t4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      div2.innerHTML = "<label for=\"password\" class=\"form-label\">Password</label> \n                <input type=\"password\" class=\"form-control\" id=\"password\"/>";
-      t8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      label1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("label");
+      label1.textContent = "Password";
+      t6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      input1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("input");
+      t7 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      a0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("a");
-      a0.textContent = "Login";
-      t10 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      button = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
+      t8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)("Login");
+      t9 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      small1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("small");
-      small1.textContent = "Belum punya akun?";
-      t12 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-      a1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("a");
-      a1.textContent = "Register";
+      small = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("small");
+      small.textContent = "Belum punya akun?";
+      t11 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      a = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("a");
+      a.textContent = "Register";
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", "d-flex justify-content-center mb-3 pt-4 pb-2");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(label0, "for", "email");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(label0, "class", "form-label");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input0, "type", "email");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input0, "class", "form-control");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input0, "id", "email");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input0, "error", "$form.errors.email");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", "mb-3");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(label1, "for", "password");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(label1, "class", "form-label");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input1, "type", "password");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input1, "class", "form-control");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input1, "id", "password");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "mb-3");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a0, "href", "/event");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a0, "class", "btn btn-e-blue");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a1, "class", "text-e-blue text-decoration-none fw-bold");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a1, "href", "/register");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "type", "submit");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", "btn btn-e-blue");
+      button.disabled = button_disabled_value =
+      /*$form*/
+      ctx[0].processing;
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "class", "text-e-blue text-decoration-none fw-bold");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "href", "/register");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "class", "ms-2");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "class", "mb-3 d-flex align-items-center");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", "col-11");
@@ -109,25 +174,92 @@ function create_default_slot(ctx) {
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, div5);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, div0);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, t0);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, div1);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, t5);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, div2);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, t8);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, div4);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, a0);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, t10);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, form_1);
+      if (if_block) if_block.m(form_1, null);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, t1);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, div1);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, label0);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, t3);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, input0);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_input_value)(input0,
+      /*$form*/
+      ctx[0].email);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, t4);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, div2);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, label1);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, t6);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, input1);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_input_value)(input1,
+      /*$form*/
+      ctx[0].password);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, t7);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, div4);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, button);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(button, t8);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, t9);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, div3);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, small1);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, t12);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, a1);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, small);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, t11);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, a);
 
       if (!mounted) {
-        dispose = [(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.action_destroyer)(inertia_action = _inertiajs_inertia_svelte__WEBPACK_IMPORTED_MODULE_2__.inertia.call(null, a0)), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.action_destroyer)(inertia_action_1 = _inertiajs_inertia_svelte__WEBPACK_IMPORTED_MODULE_2__.inertia.call(null, a1))];
+        dispose = [(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(input0, "input",
+        /*input0_input_handler*/
+        ctx[3]), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(input1, "input",
+        /*input1_input_handler*/
+        ctx[4]), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.action_destroyer)(inertia_action = _inertiajs_inertia_svelte__WEBPACK_IMPORTED_MODULE_2__.inertia.call(null, a)), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(form_1, "submit", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(
+        /*handleSubmit*/
+        ctx[2]))];
         mounted = true;
+      }
+    },
+    p: function p(ctx, dirty) {
+      if (
+      /*$form*/
+      ctx[0].errors.email) {
+        if (if_block) {
+          if_block.p(ctx, dirty);
+        } else {
+          if_block = create_if_block(ctx);
+          if_block.c();
+          if_block.m(form_1, t1);
+        }
+      } else if (if_block) {
+        if_block.d(1);
+        if_block = null;
+      }
+
+      if (dirty &
+      /*$form*/
+      1 && input0.value !==
+      /*$form*/
+      ctx[0].email) {
+        (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_input_value)(input0,
+        /*$form*/
+        ctx[0].email);
+      }
+
+      if (dirty &
+      /*$form*/
+      1 && input1.value !==
+      /*$form*/
+      ctx[0].password) {
+        (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_input_value)(input1,
+        /*$form*/
+        ctx[0].password);
+      }
+
+      if (dirty &
+      /*$form*/
+      1 && button_disabled_value !== (button_disabled_value =
+      /*$form*/
+      ctx[0].processing)) {
+        button.disabled = button_disabled_value;
       }
     },
     d: function d(detaching) {
       if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div6);
+      if (if_block) if_block.d();
       mounted = false;
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.run_all)(dispose);
     }
@@ -163,8 +295,8 @@ function create_fragment(ctx) {
       var authlayout_changes = {};
 
       if (dirty &
-      /*$$scope*/
-      1) {
+      /*$$scope, $form*/
+      33) {
         authlayout_changes.$$scope = {
           dirty: dirty,
           ctx: ctx
@@ -188,6 +320,34 @@ function create_fragment(ctx) {
   };
 }
 
+function instance($$self, $$props, $$invalidate) {
+  var $form;
+  var form = (0,_inertiajs_inertia_svelte__WEBPACK_IMPORTED_MODULE_2__.useForm)({
+    email: null,
+    password: null,
+    remember: false
+  });
+  (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.component_subscribe)($$self, form, function (value) {
+    return $$invalidate(0, $form = value);
+  });
+
+  function handleSubmit() {
+    $form.post('/login');
+  }
+
+  function input0_input_handler() {
+    $form.email = this.value;
+    form.set($form);
+  }
+
+  function input1_input_handler() {
+    $form.password = this.value;
+    form.set($form);
+  }
+
+  return [$form, form, handleSubmit, input0_input_handler, input1_input_handler];
+}
+
 var Login = /*#__PURE__*/function (_SvelteComponent) {
   _inherits(Login, _SvelteComponent);
 
@@ -199,7 +359,7 @@ var Login = /*#__PURE__*/function (_SvelteComponent) {
     _classCallCheck(this, Login);
 
     _this = _super.call(this);
-    (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(_assertThisInitialized(_this), options, null, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, {});
+    (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(_assertThisInitialized(_this), options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, {});
     return _this;
   }
 

@@ -309,6 +309,10 @@ function create_fragment(ctx) {
   var li3;
   var t19;
   var li4;
+  var img5;
+  var img5_src_value;
+  var t20;
+  var a5;
   var t22;
   var main;
   var current;
@@ -355,7 +359,10 @@ function create_fragment(ctx) {
       li3.innerHTML = "<img class=\"icon-size svelte-z1h8xw\" src=\"https://img.icons8.com/material-two-tone/24/000000/handshake.png\" alt=\"\"/> \n                        <a class=\"nav-link text-dark ms-1\" href=\"/\">Mitra</a>";
       t19 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       li4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("li");
-      li4.innerHTML = "<img class=\"icon-size svelte-z1h8xw\" src=\"https://img.icons8.com/external-sbts2018-outline-sbts2018/58/000000/external-logout-social-media-basic-1-sbts2018-outline-sbts2018.png\" alt=\"\"/> \n                        <a class=\"nav-link text-dark ms-1\" href=\"/\">Logout</a>";
+      img5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("img");
+      t20 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      a5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("a");
+      a5.textContent = "Logout";
       t22 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       main = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("main");
       if (default_slot) default_slot.c();
@@ -365,7 +372,7 @@ function create_fragment(ctx) {
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "data-bs-target", "#offcanvasNavbar");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "aria-controls", "offcanvasNavbar");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a0, "class", "navbar-brand");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a0, "href", "/");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a0, "href", "/event");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "offcanvas-header bg-dark text-white justify-content-start");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img1, "class", "icon-size svelte-z1h8xw");
       if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img1.src, img1_src_value = "https://img.icons8.com/material-outlined/48/000000/home--v2.png")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img1, "src", img1_src_value);
@@ -378,10 +385,15 @@ function create_fragment(ctx) {
       if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img2.src, img2_src_value = "https://img.icons8.com/ios-glyphs/30/000000/time-machine--v2.png")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img2, "src", img2_src_value);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img2, "alt", "");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a2, "class", "nav-link text-dark ms-1");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a2, "href", "/");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a2, "href", "/event/orderHistory");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(li1, "class", "nav-item d-flex align-items-center svelte-z1h8xw");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(li2, "class", "nav-item d-flex align-items-center svelte-z1h8xw");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(li3, "class", "nav-item d-flex align-items-center svelte-z1h8xw");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img5, "class", "icon-size svelte-z1h8xw");
+      if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img5.src, img5_src_value = "https://img.icons8.com/external-sbts2018-outline-sbts2018/58/000000/external-logout-social-media-basic-1-sbts2018-outline-sbts2018.png")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img5, "src", img5_src_value);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img5, "alt", "");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a5, "class", "nav-link text-dark ms-1");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a5, "href", "/logout");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(li4, "class", "nav-item d-flex align-items-center svelte-z1h8xw");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(ul, "class", "navbar-nav justify-content-end flex-grow-1 pe-3 svelte-z1h8xw");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "class", "offcanvas-body");
@@ -421,6 +433,9 @@ function create_fragment(ctx) {
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(ul, li3);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(ul, t19);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(ul, li4);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(li4, img5);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(li4, t20);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(li4, a5);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, t22, anchor);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, main, anchor);
 
@@ -431,11 +446,15 @@ function create_fragment(ctx) {
       current = true;
 
       if (!mounted) {
-        dispose = [(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(a1, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(
+        dispose = [(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(a0, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(
+        /*navigate*/
+        ctx[0]('/event'))), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(a1, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(
         /*navigate*/
         ctx[0]('/event'))), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(a2, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(
         /*navigate*/
-        ctx[0]('/event/orderHistory')))];
+        ctx[0]('/event/orderHistory'))), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(a5, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(
+        /*navigate*/
+        ctx[0]('/logout', 'post')))];
         mounted = true;
       }
     },
@@ -489,8 +508,10 @@ function instance($$self, $$props, $$invalidate) {
   };
 
   var navigate = function navigate(link) {
+    var method = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'get';
     return function () {
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.visit(link, {
+        method: method,
         onBefore: function onBefore() {
           clearOverflow();
         }

@@ -1,4 +1,6 @@
 // require('./bootstrap');
+
+require('alpinejs');
 import bootstrap from 'bootstrap'
 
 import { createInertiaApp } from '@inertiajs/inertia-svelte'

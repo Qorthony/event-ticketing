@@ -9,8 +9,9 @@
         body.style.paddingRight = ""
     }
 
-    const navigate = link => () => {
+    const navigate = (link, method='get') => () => {
         Inertia.visit(link, {
+            method:method,
             onBefore: () => {
                 clearOverflow()
             }
@@ -23,7 +24,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand"  href="/">Event Ticketing Platform</a>
+        <a class="navbar-brand" on:click|preventDefault="{navigate('/event')}"  href="/event">Event Ticketing Platform</a>
 
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header bg-dark text-white justify-content-start">
@@ -45,7 +46,7 @@
                     </li>
                     <li class="nav-item d-flex align-items-center">
                         <img class="icon-size" src="https://img.icons8.com/ios-glyphs/30/000000/time-machine--v2.png" alt=""/>
-                        <a class="nav-link text-dark ms-1" on:click|preventDefault="{navigate('/event/orderHistory')}" href="/">History Pemesanan</a>
+                        <a class="nav-link text-dark ms-1" on:click|preventDefault="{navigate('/event/orderHistory')}" href="/event/orderHistory">History Pemesanan</a>
                     </li>
                     <li class="nav-item d-flex align-items-center">
                         <img class="icon-size" src="https://img.icons8.com/material/24/000000/property-time.png" alt=""/>
@@ -57,7 +58,7 @@
                     </li>
                     <li class="nav-item d-flex align-items-center">
                         <img class="icon-size" src="https://img.icons8.com/external-sbts2018-outline-sbts2018/58/000000/external-logout-social-media-basic-1-sbts2018-outline-sbts2018.png" alt=""/>
-                        <a class="nav-link text-dark ms-1"  href="/">Logout</a>
+                        <a class="nav-link text-dark ms-1" on:click|preventDefault="{navigate('/logout', 'post')}"  href="/logout">Logout</a>
                     </li>
                 </ul>
             </div>

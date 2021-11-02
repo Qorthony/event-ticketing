@@ -54,11 +54,25 @@ function create_default_slot(ctx) {
   var div8;
   var div0;
   var t0;
+  var form_1;
   var div1;
+  var label0;
+  var t2;
+  var input0;
   var t3;
   var div2;
+  var label1;
+  var t5;
+  var input1;
+  var t6;
+  var small0;
   var t8;
   var div3;
+  var label2;
+  var t10;
+  var input2;
+  var t11;
+  var small1;
   var t13;
   var div4;
   var t16;
@@ -66,6 +80,8 @@ function create_default_slot(ctx) {
   var t19;
   var div7;
   var button;
+  var t20;
+  var button_disabled_value;
   var t21;
   var div6;
   var small2;
@@ -81,24 +97,40 @@ function create_default_slot(ctx) {
       div0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       div0.innerHTML = "<img src=\"images/icons/icon_auth.png\" alt=\"icon\"/>";
       t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      form_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("form");
       div1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      div1.innerHTML = "<label for=\"nama\" class=\"form-label\">Nama</label> \n                <input type=\"text\" class=\"form-control\" id=\"nama\"/>";
+      label0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("label");
+      label0.textContent = "Nama";
+      t2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      input0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("input");
       t3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      div2.innerHTML = "<label for=\"email\" class=\"form-label\">Email</label> \n                <input type=\"email\" class=\"form-control\" id=\"email\"/> \n                <small class=\"text-muted\">We\u2019ll never share your email with anyone else</small>";
+      label1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("label");
+      label1.textContent = "Email";
+      t5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      input1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("input");
+      t6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      small0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("small");
+      small0.textContent = "We’ll never share your email with anyone else";
       t8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      div3.innerHTML = "<label for=\"password\" class=\"form-label\">Password</label> \n                <input type=\"password\" class=\"form-control\" id=\"password\"/> \n                <small class=\"text-muted\">Must be 8-20 characters long.</small>";
+      label2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("label");
+      label2.textContent = "Password";
+      t10 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      input2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("input");
+      t11 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      small1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("small");
+      small1.textContent = "Must be 8-20 characters long.";
       t13 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      div4.innerHTML = "<label for=\"tgl_lhr\" class=\"form-label\">Tanggal lahir</label> \n                <input type=\"date\" class=\"form-control\" id=\"tgl_lhr\"/>";
+      div4.innerHTML = "<label for=\"tgl_lhr\" class=\"form-label\">Tanggal lahir</label> \n                    <input type=\"date\" class=\"form-control\" id=\"tgl_lhr\"/>";
       t16 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      div5.innerHTML = "<label for=\"no_hp\" class=\"form-label\">No HP</label> \n                <input type=\"text\" class=\"form-control\" id=\"no_hp\"/>";
+      div5.innerHTML = "<label for=\"no_hp\" class=\"form-label\">No HP</label> \n                    <input type=\"text\" class=\"form-control\" id=\"no_hp\"/>";
       t19 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div7 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       button = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
-      button.textContent = "Register";
+      t20 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)("Register");
       t21 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       small2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("small");
@@ -107,12 +139,33 @@ function create_default_slot(ctx) {
       a = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("a");
       a.textContent = "Login";
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", "d-flex justify-content-center mb-3 pt-4 pb-2");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(label0, "for", "nama");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(label0, "class", "form-label");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input0, "type", "text");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input0, "class", "form-control");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input0, "id", "nama");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", "mb-3");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(label1, "for", "email");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(label1, "class", "form-label");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input1, "type", "email");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input1, "class", "form-control");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input1, "id", "email");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(small0, "class", "text-muted");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "mb-3");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(label2, "for", "password");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(label2, "class", "form-label");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input2, "type", "password");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input2, "class", "form-control");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input2, "id", "password");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(small1, "class", "text-muted");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "class", "mb-3");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "class", "mb-3");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", "mb-3");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "type", "submit");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", "btn btn-e-blue");
+      button.disabled = button_disabled_value =
+      /*$form*/
+      ctx[0].processing;
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "class", "text-e-blue text-decoration-none fw-bold");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "href", "/");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div6, "class", "ms-2");
@@ -125,18 +178,42 @@ function create_default_slot(ctx) {
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div9, div8);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, div0);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, t0);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, div1);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, t3);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, div2);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, t8);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, div3);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, t13);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, div4);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, t16);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, div5);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, t19);
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, div7);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, form_1);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, div1);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, label0);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, t2);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, input0);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_input_value)(input0,
+      /*$form*/
+      ctx[0].name);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, t3);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, div2);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, label1);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, t5);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, input1);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_input_value)(input1,
+      /*$form*/
+      ctx[0].email);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, t6);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, small0);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, t8);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, div3);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, label2);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, t10);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, input2);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_input_value)(input2,
+      /*$form*/
+      ctx[0].password);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, t11);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, small1);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, t13);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, div4);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, t16);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, div5);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, t19);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form_1, div7);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div7, button);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(button, t20);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div7, t21);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div7, div6);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, small2);
@@ -144,14 +221,61 @@ function create_default_slot(ctx) {
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, a);
 
       if (!mounted) {
-        dispose = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.action_destroyer)(inertia_action = _inertiajs_inertia_svelte__WEBPACK_IMPORTED_MODULE_2__.inertia.call(null, a));
+        dispose = [(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(input0, "input",
+        /*input0_input_handler*/
+        ctx[3]), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(input1, "input",
+        /*input1_input_handler*/
+        ctx[4]), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(input2, "input",
+        /*input2_input_handler*/
+        ctx[5]), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.action_destroyer)(inertia_action = _inertiajs_inertia_svelte__WEBPACK_IMPORTED_MODULE_2__.inertia.call(null, a)), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(form_1, "submit", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(
+        /*handleSubmit*/
+        ctx[2]))];
         mounted = true;
+      }
+    },
+    p: function p(ctx, dirty) {
+      if (dirty &
+      /*$form*/
+      1 && input0.value !==
+      /*$form*/
+      ctx[0].name) {
+        (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_input_value)(input0,
+        /*$form*/
+        ctx[0].name);
+      }
+
+      if (dirty &
+      /*$form*/
+      1 && input1.value !==
+      /*$form*/
+      ctx[0].email) {
+        (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_input_value)(input1,
+        /*$form*/
+        ctx[0].email);
+      }
+
+      if (dirty &
+      /*$form*/
+      1 && input2.value !==
+      /*$form*/
+      ctx[0].password) {
+        (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_input_value)(input2,
+        /*$form*/
+        ctx[0].password);
+      }
+
+      if (dirty &
+      /*$form*/
+      1 && button_disabled_value !== (button_disabled_value =
+      /*$form*/
+      ctx[0].processing)) {
+        button.disabled = button_disabled_value;
       }
     },
     d: function d(detaching) {
       if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div9);
       mounted = false;
-      dispose();
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.run_all)(dispose);
     }
   };
 }
@@ -185,8 +309,8 @@ function create_fragment(ctx) {
       var authlayout_changes = {};
 
       if (dirty &
-      /*$$scope*/
-      1) {
+      /*$$scope, $form*/
+      65) {
         authlayout_changes.$$scope = {
           dirty: dirty,
           ctx: ctx
@@ -210,6 +334,39 @@ function create_fragment(ctx) {
   };
 }
 
+function instance($$self, $$props, $$invalidate) {
+  var $form;
+  var form = (0,_inertiajs_inertia_svelte__WEBPACK_IMPORTED_MODULE_2__.useForm)({
+    name: null,
+    email: null,
+    password: null
+  });
+  (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.component_subscribe)($$self, form, function (value) {
+    return $$invalidate(0, $form = value);
+  });
+
+  function handleSubmit() {
+    $form.post("/register");
+  }
+
+  function input0_input_handler() {
+    $form.name = this.value;
+    form.set($form);
+  }
+
+  function input1_input_handler() {
+    $form.email = this.value;
+    form.set($form);
+  }
+
+  function input2_input_handler() {
+    $form.password = this.value;
+    form.set($form);
+  }
+
+  return [$form, form, handleSubmit, input0_input_handler, input1_input_handler, input2_input_handler];
+}
+
 var Register = /*#__PURE__*/function (_SvelteComponent) {
   _inherits(Register, _SvelteComponent);
 
@@ -221,7 +378,7 @@ var Register = /*#__PURE__*/function (_SvelteComponent) {
     _classCallCheck(this, Register);
 
     _this = _super.call(this);
-    (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(_assertThisInitialized(_this), options, null, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, {});
+    (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(_assertThisInitialized(_this), options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, {});
     return _this;
   }
 
