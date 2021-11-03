@@ -24,8 +24,8 @@ class CreateEventsTable extends Migration
             $table->text('deskripsi')->nullable();
             $table->string('penyelenggara');
             $table->enum('status_verifikasi', ['wait', 'acc', 'reject']);
-            $table->boolean('distribusi_tiket');
-            $table->integer('komisi_distribusi')->nullable();
+            // $table->boolean('distribusi_tiket');
+            // $table->integer('komisi_distribusi')->nullable();
             $table->foreignId('admin_id')->nullable();
             $table->timestamps();
 
