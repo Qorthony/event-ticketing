@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\EventsController;
@@ -32,7 +33,17 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::prefix('admin')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/', function () {
+        return redirect()->to('admin/login');
+    });
+
+    Route::get('/login', [LoginController::class, 'index'])->middleware('guest.admin');
+
+    Route::post('/login', [LoginController::class, 'login'])->middleware('guest.admin')->name('admin.login');
+
+    Route::post('/logout', [LoginController::class, 'logout'])->name('admin.logout');
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth.admin');
 
     Route::prefix('event')->group(function () {
         Route::get('/', [EventController::class, 'index']);
