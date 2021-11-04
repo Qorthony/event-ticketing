@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -14,6 +15,9 @@ class EventController extends Controller
 
     public function index()
     {
-        return view('admins.events.index');
+        return view('admins.events.index', [
+            'page'=>'event',
+            'events'=>  Event::latest()->get(),
+        ]);
     }
 }

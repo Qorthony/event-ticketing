@@ -18,6 +18,7 @@ class CreateEventsTable extends Migration
             $table->string('nama_event');
             $table->string('jenis_event');
             $table->dateTime('tgl_event');
+            $table->string('lokasi');
             $table->integer('harga');
             $table->integer('kuota');
             $table->string('poster_url',255);

@@ -22,9 +22,10 @@ class EventFactory extends Factory
     public function definition()
     {
         return [
-            'nama_event' => $this->faker->catchPhrase(),
+            'nama_event' => $this->faker->sentence(2,3),
             'jenis_event' => $this->faker->word(),
             'tgl_event' => $this->faker->dateTime('2022-12-31'),
+            'lokasi'=>$this->faker->city(),
             'harga'=>$this->faker->numberBetween(10000, 300000),
             'kuota'=> $this->faker->numberBetween(5, 1000),
             'poster_url'=>$this->faker->imageUrl(640, 480, null, true),
