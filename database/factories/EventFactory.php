@@ -22,7 +22,16 @@ class EventFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nama_event' => $this->faker->catchPhrase(),
+            'jenis_event' => $this->faker->word(),
+            'tgl_event' => $this->faker->dateTime('2022-12-31'),
+            'harga'=>$this->faker->numberBetween(10000, 300000),
+            'kuota'=> $this->faker->numberBetween(5, 1000),
+            'poster_url'=>$this->faker->imageUrl(640, 480, null, true),
+            'deskripsi'=>$this->faker->paragraphs(2, true),
+            'penyelenggara'=>$this->faker->company(),
+            'status_verifikasi'=> 'acc',
+            'admin_id'=>mt_rand(1,3)
         ];
     }
 }
