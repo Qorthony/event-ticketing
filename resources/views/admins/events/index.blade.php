@@ -40,7 +40,8 @@
                     <td> {{$event->harga}} </td>
                     <td>
                         <x-event.modal-detail :event="$event"/>
-                        <button class="btn btn-success btn-sm"> <i class="fa fa-edit"></i> </button>
+                        {{-- <button class="btn btn-success btn-sm"> <i class="fa fa-edit"></i> </button> --}}
+                        <x-event.modal-edit :event="$event" />
                         <form action="/admin/event/{{$event->id_event}}" method="post">
                             @method('delete')
                             @csrf

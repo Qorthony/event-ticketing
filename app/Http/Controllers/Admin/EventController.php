@@ -66,6 +66,29 @@ class EventController extends Controller
 
     }
 
+    public function update(Request $request,Event $event)
+    {
+        $validatedData = $request->validate([
+            'nama_event' => 'required|string',
+            'jenis_event' => 'required|string|max:20',
+            'tgl_event' => 'required|date',
+            'lokasi' => 'required|string',
+            'harga' => 'required|integer',
+            'kuota' => 'required|integer',
+            'penyelenggara' => 'required|string',
+            'deskripsi' => 'required'
+        ]);
+
+        if ($request->has('poster')) {
+            $path = $request->file('poster')->store('events','public');
+            $validatedData['poster_url'] = $path;
+        }
+
+        Event::where('id_event', $event->id_event)->update($validatedData);
+
+        return redirect('/admin/event')->with('alert_success','Berhasil update event : '.$event->nama_event);
+    }
+
     public function destroy(Event $event)
     {
         Event::destroy($event->id_event);

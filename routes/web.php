@@ -49,6 +49,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/', [EventController::class, 'index'])->name('admin.event.index');
         Route::post('/store', [EventController::class, 'store'])->name('admin.event.store');
         Route::delete('/{event}', [EventController::class, 'destroy'])->name('admin.event.destroy');
+        Route::put('/{event}', [EventController::class, 'update']);
     });
 });
 
