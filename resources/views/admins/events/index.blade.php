@@ -41,7 +41,11 @@
                     <td>
                         <x-event.modal-detail :event="$event"/>
                         <button class="btn btn-success btn-sm"> <i class="fa fa-edit"></i> </button>
-                        <button class="btn btn-danger btn-sm"> <i class="fa fa-trash"></i> </button>
+                        <form action="/admin/event/{{$event->id_event}}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button class="btn btn-danger btn-sm" onclick="return confirm('Hapus Data ?')" > <i class="fa fa-trash"></i> </button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach

@@ -65,4 +65,10 @@ class EventController extends Controller
         return back()->with('alert_error', 'gagal upload');
 
     }
+
+    public function destroy(Event $event)
+    {
+        Event::destroy($event->id_event);
+        return redirect(route('admin.event.index'))->with('alert_success', $event->nama_event.' Berhasil dihapus!');
+    }
 }

@@ -16,7 +16,7 @@
             </div>
             <div class="modal-body">
                 <div class="d-flex align-items-start">
-                    <img style="width: 500px;max-width:40%;" class="mr-3" src="{{$event->poster_url}}" alt="poster">
+                    <img style="width: 500px;max-width:40%;" class="mr-3" src="{{ str_starts_with($event->poster_url, 'http')?$event->poster_url:url('storage/'.$event->poster_url) }}" alt="poster">
                     <table class="table table-borderless bg-white">
                         <tr class="bg-white pb-0 mb-0">
                             <td class="font-weight-bold py-1">Nama Event</td>
