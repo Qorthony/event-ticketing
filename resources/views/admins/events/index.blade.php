@@ -8,10 +8,13 @@
 @section('content-title', 'Data Event')
 
 @section('content')
+<x-event.alert-success/>
+<x-event.alert-error />
+<x-event.alert-errors />
 <div class="card mb-3">
     <div class="card-header d-flex justify-content-between align-items-center">
         <div class="card-title">Data Event</div>
-        <div class="ml-auto"> <button class="btn btn-secondary ">Tambah Event</button> </div>
+        <div class="ml-auto"> <x-event.modal-create></x-event> </div>
     </div>
     <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">

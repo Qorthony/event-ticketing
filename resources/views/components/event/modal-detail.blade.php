@@ -16,35 +16,35 @@
             </div>
             <div class="modal-body">
                 <div class="d-flex align-items-start">
-                    <img style="width: 500px;max-width:40%;min-width:300px;" class="mr-3" src="{{$event->poster_url}}" alt="poster">
+                    <img style="width: 500px;max-width:40%;" class="mr-3" src="{{$event->poster_url}}" alt="poster">
                     <table class="table table-borderless bg-white">
-                        <tr class="bg-white">
-                            <td class="font-weight-bold">Nama Event</td>
-                            <td>: {{$event->nama_event}} </td>
+                        <tr class="bg-white pb-0 mb-0">
+                            <td class="font-weight-bold py-1">Nama Event</td>
+                            <td class="py-1">: {{$event->nama_event}} </td>
                         </tr>
                         <tr class="bg-white">
-                            <td class="font-weight-bold">Jenis Event</td>
-                            <td>: {{$event->jenis_event}} </td>
+                            <td class="font-weight-bold py-1">Jenis Event</td>
+                            <td class="py-1">: {{$event->jenis_event}} </td>
                         </tr>
                         <tr class="bg-white">
-                            <td class="font-weight-bold">Tanggal&Waktu</td>
-                            <td>: {{$event->tgl_event}} </td>
+                            <td class="font-weight-bold py-1">Tanggal&Waktu</td>
+                            <td class="py-1">: {{$event->tgl_event}} </td>
                         </tr>
                         <tr class="bg-white">
-                            <td class="font-weight-bold">Lokasi</td>
-                            <td>: {{$event->lokasi}} </td>
+                            <td class="font-weight-bold py-1">Lokasi</td>
+                            <td class="py-1">: {{$event->lokasi}} </td>
                         </tr>
                         <tr class="bg-white">
-                            <td class="font-weight-bold">Harga</td>
-                            <td>: Rp. {{$event->kuota}} </td>
+                            <td class="font-weight-bold py-1">Harga</td>
+                            <td class="py-1">: Rp. {{$event->kuota}} </td>
                         </tr>
                         <tr class="bg-white">
-                            <td class="font-weight-bold">Kuota</td>
-                            <td>: {{$event->kuota}} </td>
+                            <td class="font-weight-bold py-1">Kuota</td>
+                            <td class="py-1">: {{$event->kuota}} </td>
                         </tr>
                         <tr class="bg-white">
-                            <td class="font-weight-bold">Deskripsi</td>
-                            <td>: {{$event->deskripsi}} </td>
+                            <td class="font-weight-bold py-1">Deskripsi</td>
+                            <td class="py-1">: {{$event->deskripsi}} </td>
                         </tr>
                     </table>
                 </div>

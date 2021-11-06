@@ -46,7 +46,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth.admin');
 
     Route::prefix('event')->group(function () {
-        Route::get('/', [EventController::class, 'index']);
+        Route::get('/', [EventController::class, 'index'])->name('admin.event.index');
+        Route::post('/store', [EventController::class, 'store'])->name('admin.event.store');
     });
 });
 
