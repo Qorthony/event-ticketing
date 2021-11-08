@@ -29,7 +29,7 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'nama_event' => 'required|string',
             'jenis_event' => 'required|string|max:20',
             'tgl_event' => 'required|date',
@@ -40,6 +40,8 @@ class EventController extends Controller
             'poster' => 'required',
             'deskripsi' => 'required'
         ]);
+
+        dd($validated);
 
         $path = $request->file('poster')->store('events','public');
 

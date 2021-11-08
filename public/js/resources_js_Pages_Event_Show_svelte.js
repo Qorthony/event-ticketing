@@ -14,6 +14,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/internal/index.mjs");
 /* harmony import */ var _Shared_Layout_Layout_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Shared/Layout/Layout.svelte */ "./resources/js/Shared/Layout/Layout.svelte");
 /* harmony import */ var _inertiajs_inertia_svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-svelte */ "./node_modules/@inertiajs/inertia-svelte/src/index.js");
+/* harmony import */ var _Shared_Helpers_dateAndTime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Shared/Helpers/dateAndTime */ "./resources/js/Shared/Helpers/dateAndTime.js");
+/* harmony import */ var _Shared_Helpers_posterEvent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Shared/Helpers/posterEvent */ "./resources/js/Shared/Helpers/posterEvent.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -49,11 +51,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
 function get_each_context(ctx, list, i) {
   var child_ctx = ctx.slice();
   child_ctx[1] = list[i];
   return child_ctx;
-} // (24:8) {#each events as event}
+} // (15:8) {#each events as event}
 
 
 function create_each_block(ctx) {
@@ -66,33 +70,35 @@ function create_each_block(ctx) {
   var h5;
   var t1_value =
   /*event*/
-  ctx[1].judul + "";
+  ctx[1].nama_event + "";
   var t1;
   var t2;
   var div2;
   var div0;
   var t3_value =
   /*event*/
-  ctx[1].jenis + "";
+  ctx[1].jenis_event + "";
   var t3;
   var t4;
   var div1;
   var p0;
   var t5;
-  var t6_value =
+  var t6_value = (0,_Shared_Helpers_dateAndTime__WEBPACK_IMPORTED_MODULE_3__.parseTgl)(
   /*event*/
-  ctx[1].tanggal + "";
+  ctx[1].tgl_event) + "";
   var t6;
   var t7;
   var p1;
   var t8;
-  var t9_value =
+  var t9_value = (0,_Shared_Helpers_dateAndTime__WEBPACK_IMPORTED_MODULE_3__.parseWaktu)(
   /*event*/
-  ctx[1].waktu + "";
+  ctx[1].tgl_event) + "";
   var t9;
   var t10;
   var t11;
   var a;
+  var t12;
+  var a_href_value;
   var inertia_action;
   var t13;
   var mounted;
@@ -122,14 +128,18 @@ function create_each_block(ctx) {
       t10 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(" WIB");
       t11 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       a = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("a");
-      a.textContent = "More";
+      t12 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)("More");
       t13 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-      if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img.src, img_src_value = "https://www.namastra.co.id/img?src=9fa8a5b94738aa2ba3d214d77c0aff1e.jpg&width=1200&height=860")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "src", img_src_value);
+      if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img.src, img_src_value = (0,_Shared_Helpers_posterEvent__WEBPACK_IMPORTED_MODULE_4__.getUrlPoster)(
+      /*event*/
+      ctx[1].poster_url))) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "src", img_src_value);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "class", "card-img-top");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "alt", "...");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(h5, "class", "card-title fw-bold mb-4");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "d-flex justify-content-between");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "href", "/event/1");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "href", a_href_value = '/event/' +
+      /*event*/
+      ctx[1].id_event);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "class", "text-reset fw-bold text-decoration-none stretched-link");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "class", "card-body");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(article, "class", "card");
@@ -159,6 +169,7 @@ function create_each_block(ctx) {
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(p1, t10);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, t11);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, a);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(a, t12);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, t13);
 
       if (!mounted) {
@@ -166,14 +177,51 @@ function create_each_block(ctx) {
         mounted = true;
       }
     },
-    p: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
+    p: function p(ctx, dirty) {
+      if (dirty &
+      /*events*/
+      1 && !(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img.src, img_src_value = (0,_Shared_Helpers_posterEvent__WEBPACK_IMPORTED_MODULE_4__.getUrlPoster)(
+      /*event*/
+      ctx[1].poster_url))) {
+        (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "src", img_src_value);
+      }
+
+      if (dirty &
+      /*events*/
+      1 && t1_value !== (t1_value =
+      /*event*/
+      ctx[1].nama_event + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t1, t1_value);
+      if (dirty &
+      /*events*/
+      1 && t3_value !== (t3_value =
+      /*event*/
+      ctx[1].jenis_event + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t3, t3_value);
+      if (dirty &
+      /*events*/
+      1 && t6_value !== (t6_value = (0,_Shared_Helpers_dateAndTime__WEBPACK_IMPORTED_MODULE_3__.parseTgl)(
+      /*event*/
+      ctx[1].tgl_event) + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t6, t6_value);
+      if (dirty &
+      /*events*/
+      1 && t9_value !== (t9_value = (0,_Shared_Helpers_dateAndTime__WEBPACK_IMPORTED_MODULE_3__.parseWaktu)(
+      /*event*/
+      ctx[1].tgl_event) + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t9, t9_value);
+
+      if (dirty &
+      /*events*/
+      1 && a_href_value !== (a_href_value = '/event/' +
+      /*event*/
+      ctx[1].id_event)) {
+        (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "href", a_href_value);
+      }
+    },
     d: function d(detaching) {
       if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div4);
       mounted = false;
       dispose();
     }
   };
-} // (21:0) <Layout>
+} // (12:0) <Layout>
 
 
 function create_default_slot(ctx) {
@@ -214,7 +262,7 @@ function create_default_slot(ctx) {
     },
     p: function p(ctx, dirty) {
       if (dirty &
-      /*events*/
+      /*events, parseWaktu, parseTgl, getUrlPoster*/
       1) {
         each_value =
         /*events*/
@@ -280,8 +328,8 @@ function create_fragment(ctx) {
       var layout_changes = {};
 
       if (dirty &
-      /*$$scope*/
-      16) {
+      /*$$scope, events*/
+      17) {
         layout_changes.$$scope = {
           dirty: dirty,
           ctx: ctx
@@ -305,18 +353,13 @@ function create_fragment(ctx) {
   };
 }
 
-function instance($$self) {
-  var events = [{
-    judul: "INDONESIA YOUTH MUSIC FESTIVAL",
-    jenis: "Konser",
-    tanggal: "23 Aug 2021",
-    waktu: "19:00"
-  }, {
-    judul: "INDONESIA YOUTH MUSIC FESTIVAL",
-    jenis: "Konser",
-    tanggal: "23 Aug 2021",
-    waktu: "19:00"
-  }];
+function instance($$self, $$props, $$invalidate) {
+  var events = $$props.events;
+
+  $$self.$$set = function ($$props) {
+    if ('events' in $$props) $$invalidate(0, events = $$props.events);
+  };
+
   return [events];
 }
 
@@ -331,7 +374,9 @@ var Show = /*#__PURE__*/function (_SvelteComponent) {
     _classCallCheck(this, Show);
 
     _this = _super.call(this);
-    (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(_assertThisInitialized(_this), options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, {});
+    (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(_assertThisInitialized(_this), options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, {
+      events: 0
+    });
     return _this;
   }
 
@@ -659,6 +704,47 @@ var Layout = /*#__PURE__*/function (_SvelteComponent) {
 }(svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Layout);
+
+/***/ }),
+
+/***/ "./resources/js/Shared/Helpers/dateAndTime.js":
+/*!****************************************************!*\
+  !*** ./resources/js/Shared/Helpers/dateAndTime.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "parseTgl": () => (/* binding */ parseTgl),
+/* harmony export */   "parseWaktu": () => (/* binding */ parseWaktu)
+/* harmony export */ });
+var parseTgl = function parseTgl(dateTime) {
+  return dateTime.split(" ")[0];
+};
+var parseWaktu = function parseWaktu(dateTime) {
+  var time = dateTime.split(" ")[1];
+  var hourAndMinute = time.split(":");
+  hourAndMinute.splice(2, 1); // console.log(hourAndMinute.join(":"));
+
+  return hourAndMinute.join(":");
+};
+
+/***/ }),
+
+/***/ "./resources/js/Shared/Helpers/posterEvent.js":
+/*!****************************************************!*\
+  !*** ./resources/js/Shared/Helpers/posterEvent.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getUrlPoster": () => (/* binding */ getUrlPoster)
+/* harmony export */ });
+var getUrlPoster = function getUrlPoster(url) {
+  var protocol = url.split(":")[0];
+  return protocol === 'http' || protocol === 'https' ? url : "/storage/" + url;
+};
 
 /***/ })
 

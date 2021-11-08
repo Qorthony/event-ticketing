@@ -19,8 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/event', [EventsController::class,'show'])->name('home');
 Route::get('/event/orderHistory', [EventsController::class, 'orderHistory']);
-Route::get('/event/{id}', [EventsController::class,'detail']);
-Route::get('/event/{id}/payment', [EventsController::class, 'showPayment']);
+Route::get('/event/payment/{order}', [EventsController::class, 'showPayment']);
+Route::post('/event/payment/{order}', [EventsController::class, 'uploadPayment']);
+Route::get('/event/{event}', [EventsController::class,'detail']);
+Route::post('/event/{event}/order', [EventsController::class, 'order']);
 
 // Route::get('/', function () {
 //     return view('welcome');
