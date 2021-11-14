@@ -28,6 +28,8 @@ Route::post('/event/{event}/order', [EventsController::class, 'order']);
 Route::get('/creator', [CreatorController::class, 'index'])->middleware(['auth','creator']);
 Route::get('/creator/buatEvent', [CreatorController::class, 'buatEvent'])->middleware(['auth','creator']);
 Route::post('/creator/buatEvent', [CreatorController::class, 'storeEvent'])->middleware(['auth','creator']);
+Route::get('/creator/editEvent', [CreatorController::class, 'editEvent'])->middleware(['auth','creator']);
+
 Route::get('/creator/first', [CreatorController::class, 'first'])->middleware(['auth','not.creator']);
 Route::post('/creator/regist', [CreatorController::class, 'regist'])->middleware(['auth','not.creator']);
 
@@ -60,6 +62,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/pesanan', [EventController::class, 'pesanan']);
         Route::post('/pesanan/{payment}/terima', [EventController::class, 'terimaPayment']);
         Route::post('/pesanan/{payment}/tolak', [EventController::class, 'tolakPayment']);
+        Route::get('/list-pengajuan', [EventController::class, 'listPengajuan']);
+        Route::post('/verifikasi-pengajuan/{event}/terima', [EventController::class, 'terimaPengajuan']);
+        Route::post('/verifikasi-pengajuan/{event}/tolak', [EventController::class, 'tolakPengajuan']);
         Route::delete('/{event}', [EventController::class, 'destroy'])->name('admin.event.destroy');
         Route::put('/{event}', [EventController::class, 'update']);
     });

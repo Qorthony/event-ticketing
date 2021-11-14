@@ -1,11 +1,11 @@
 @extends('admins.layouts.base')
 
-@section('title', 'Pesanan')
+@section('title', 'Pengajuan Event')
 
 @section('head')
 <!-- DataTables -->
 <link rel="stylesheet" href="/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
-@section('content-title', 'Pesanan')
+@section('content-title', 'Pengajuan Event')
 
 @section('content')
 <x-event.alert-success/>
@@ -13,32 +13,32 @@
 <x-event.alert-errors />
 <div class="card mb-3">
     <div class="card-header d-flex justify-content-between align-items-center">
-        <div class="card-title">Pesanan</div>
+        <div class="card-title">Pengajuan Event</div>
     </div>
     <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Tanggal Bayar</th>
                     <th>Nama Pengirim</th>
                     <th>Nama Event</th>
-                    <th>No Rekening</th>
-                    <th>Bank Pengirim</th>
+                    <th>Tanggal&Waktu</th>
+                    <th>Kuota</th>
+                    <th>Harga</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($payments as $key=>$payment)
+                @foreach ($events as $key=>$event)
                 <tr>
                     <td>{{$key+1}}</td>
-                    <td> {{$payment->tgl_payment}} </td>
-                    <td> {{$payment->nama_pengirim}} </td>
-                    <td> {{$payment->nama_event}} </td>
-                    <td> {{ $payment->no_rek }} </td>
-                    <td> {{$payment->bank_pengirim}} </td>
+                    <td> {{$event->name}} </td>
+                    <td> {{$event->nama_event}} </td>
+                    <td> {{$event->tgl_event}} </td>
+                    <td> {{ $event->kuota }} </td>
+                    <td> {{$event->harga}} </td>
                     <td>
-                        <x-event.modal-verifikasi-pembayaran :payment="$payment" />
+                        <x-event.modal-verifikasi-event :event="$event"/>
 
                     </td>
                 </tr>

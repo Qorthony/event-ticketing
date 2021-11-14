@@ -5,6 +5,8 @@ import { getUrlPoster } from "../../Shared/Helpers/posterEvent";
 
     import Layout from "../../Shared/Layout/Layout.svelte";
 
+    import Status from "../../Components/Creator/Status.svelte";
+
     import { inertia } from "@inertiajs/inertia-svelte";
 
     export let events;
@@ -32,7 +34,7 @@ import { getUrlPoster } from "../../Shared/Helpers/posterEvent";
           <div class="d-flex justify-content-between mb-1">
               <div>
                   <p class="mb-0">{event.jenis_event}</p>
-                  <small class="mb-0 badge bg-success">Terverifikasi</small>
+                  <Status status={event.status_verifikasi}/>
               </div>
               <div>
                   <p class="mb-0">Tanggal : {parseTgl(event.tgl_event) }</p>

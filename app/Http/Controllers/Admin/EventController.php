@@ -28,7 +28,9 @@ class EventController extends Controller
     {
         return view('admins.events.index', [
             'page'=>'event',
-            'events'=>  Event::latest()->get(),
+            'events'=>  Event::where('status_verifikasi','acc')
+                                ->orderBy('id_event','desc')
+                                ->get(),
         ]);
     }
 
@@ -142,5 +144,36 @@ class EventController extends Controller
         $payment->admin_id=Auth::guard('admin')->id();
 
         return redirect('/admin/event/pesanan')->with('alert_success','Berhasil tolak pesanan : '.$payment->id_payment);
+    }
+
+    public function listPengajuan()
+    {
+        $events = Event::join('creators','events.creator_id','=','creators.id_creator')
+                        ->join('users','creators.id_creator','=','users.creator_id')
+                        ->where('events.status_verifikasi','wait')
+                        ->get();
+        // dd($events);
+        return view('admins.events.verifikasi-pengajuan',[
+            'page'=>'pengajuan',
+            'events'=>$events
+        ]);
+    }
+
+    public function terimaPengajuan(Event $event)
+    {
+        $event->status_verifikasi = 'acc';
+        $event->save();
+
+        return redirect('/admin/event/list-pengajuan')
+                ->with('alert_success','Berhasil Memverifikasi Event : '.$event->nama_event);
+    }
+
+    public function tolakPengajuan(Event $event)
+    {
+        $event->status_verifikasi = 'reject';
+        $event->save();
+
+        return redirect('/admin/event/list-pengajuan')
+                ->with('alert_success','Berhasil tolak pengajuan Event : '.$event->nama_event);
     }
 }

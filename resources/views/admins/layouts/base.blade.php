@@ -132,7 +132,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link {{$page=='pengajuan'?'active':''}}">
+            <a href="/admin/event/list-pengajuan" class="nav-link {{$page=='pengajuan'?'active':''}}">
               <i class="nav-icon fas fa-external-link-alt"></i>
               <p>
                 Pengajuan Event
