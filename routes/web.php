@@ -27,6 +27,7 @@ Route::post('/event/{event}/order', [EventsController::class, 'order']);
 
 Route::get('/creator', [CreatorController::class, 'index'])->middleware('creator');
 Route::get('/creator/first', [CreatorController::class, 'first'])->middleware('not.creator');
+Route::post('/creator/regist', [CreatorController::class, 'regist'])->middleware('not.creator');
 
 // Route::get('/', function () {
 //     return view('welcome');

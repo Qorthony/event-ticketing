@@ -10,4 +10,10 @@ class Creator extends Model
     use HasFactory;
 
     protected $primaryKey = 'id_creator';
+
+    protected $fillable = [
+        'no_rek',
+        'nama_bank',
+        'nama_rek',
+    ];
 }

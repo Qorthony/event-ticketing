@@ -3,7 +3,7 @@
     import { inertia } from "@inertiajs/inertia-svelte";
     import { parseTgl, parseWaktu } from "../../Shared/Helpers/dateAndTime";
     import { useForm } from "@inertiajs/inertia-svelte";
-import { Inertia } from "@inertiajs/inertia";
+    import { Inertia } from "@inertiajs/inertia";
 
     export let order;
     export let errors = {}
