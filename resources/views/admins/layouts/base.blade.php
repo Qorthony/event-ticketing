@@ -124,7 +124,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link {{$page=='pesanan'?'active':''}}">
+            <a href="/admin/event/pesanan" class="nav-link {{$page=='pesanan'?'active':''}}">
               <i class="nav-icon fas fa-shopping-cart"></i>
               <p>
                 Pesanan

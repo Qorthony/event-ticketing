@@ -1,6 +1,6 @@
 @extends('admins.layouts.base')
 
-@section('title', 'Data Event')
+@section('title', 'Pesanan')
 
 @section('head')
 <!-- DataTables -->
@@ -13,7 +13,7 @@
 <x-event.alert-errors />
 <div class="card mb-3">
     <div class="card-header d-flex justify-content-between align-items-center">
-        <div class="card-title">Data Event</div>
+        <div class="card-title">Pesanan</div>
         <div class="ml-auto"> <x-event.modal-create></x-event> </div>
     </div>
     <div class="card-body">
@@ -21,31 +21,26 @@
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>Tanggal Bayar</th>
+                    <th>Nama Pengirim</th>
                     <th>Nama Event</th>
-                    <th>Jenis</th>
-                    <th>Tanggal & Waktu</th>
-                    <th>Kuota</th>
-                    <th>Harga</th>
+                    <th>No Rekening</th>
+                    <th>Bank Pengirim</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($events as $key=>$event)
+                @foreach ($payments as $key=>$payment)
                 <tr>
                     <td>{{$key+1}}</td>
-                    <td> {{$event->nama_event}} </td>
-                    <td> {{$event->jenis_event}} </td>
-                    <td> {{$event->tgl_event}} </td>
-                    <td> {{ $event->kuota }} </td>
-                    <td> {{$event->harga}} </td>
+                    <td> {{$payment->tgl_payment}} </td>
+                    <td> {{$payment->nama_pengirim}} </td>
+                    <td> {{$payment->nama_event}} </td>
+                    <td> {{ $payment->no_rek }} </td>
+                    <td> {{$payment->bank_pengirim}} </td>
                     <td>
-                        <x-event.modal-detail :event="$event"/>
-                        <x-event.modal-edit :event="$event" />
-                        <form action="/admin/event/{{$event->id_event}}" method="post">
-                            @method('delete')
-                            @csrf
-                            <button class="btn btn-danger btn-sm" onclick="return confirm('Hapus Data ?')" > <i class="fa fa-trash"></i> </button>
-                        </form>
+                        <x-event.modal-verifikasi-pembayaran :payment="$payment" />
+
                     </td>
                 </tr>
                 @endforeach

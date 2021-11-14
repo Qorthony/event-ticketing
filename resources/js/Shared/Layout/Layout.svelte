@@ -50,7 +50,7 @@
                     </li>
                     <li class="nav-item d-flex align-items-center">
                         <img class="icon-size" src="https://img.icons8.com/material/24/000000/property-time.png" alt=""/>
-                        <a class="nav-link text-dark ms-1" href="/">Event Creator</a>
+                        <a class="nav-link text-dark ms-1" on:click|preventDefault="{navigate('/creator')}" href="/creator">Event Creator</a>
                     </li>
                     <li class="nav-item d-flex align-items-center">
                         <img class="icon-size" src="https://img.icons8.com/material-two-tone/24/000000/handshake.png" alt=""/>

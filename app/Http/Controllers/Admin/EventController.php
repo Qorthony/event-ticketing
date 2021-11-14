@@ -3,10 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\TiketEvent;
 use App\Models\Event;
+use App\Models\Order;
+use App\Models\Payment;
+use App\Models\User;
 use Faker\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class EventController extends Controller
@@ -95,5 +100,47 @@ class EventController extends Controller
     {
         Event::destroy($event->id_event);
         return redirect(route('admin.event.index'))->with('alert_success', $event->nama_event.' Berhasil dihapus!');
+    }
+
+    public function pesanan()
+    {
+        $payments = Payment::join('orders','payments.id_payment','=','orders.payment_id')
+                            ->join('events','orders.event_id','=','events.id_event')
+                            ->where('status_order','MV')
+                            ->get();
+        // dd($payment);
+        return view('admins.events.pesanan', [
+            'page'=>'pesanan',
+            'payments'=>$payments
+        ]);
+    }
+
+    public function terimaPayment(Payment $payment)
+    {
+        $updatedOrder = Order::where('payment_id', $payment->id_payment)
+                        ->update([
+                            'status_order'=>'ACC'
+                        ]);
+        $payment->admin_id=Auth::guard('admin')->id();
+
+        $order = Order::join('users','orders.user_id','=','users.id')
+                        ->join('events', 'orders.event_id','=','events.id_event')
+                        ->where('payment_id', $payment->id_payment)
+                        ->first();
+        // dd($updatedOrder, $order);
+        Mail::to(User::find($order->user_id)->email)->send(new TiketEvent($order));
+
+        return redirect('/admin/event/pesanan')->with('alert_success','Berhasil terima pesanan : '.$payment->id_payment);
+    }
+
+    public function tolakPayment(Payment $payment)
+    {
+        $order = Order::where('payment_id', $payment->id_payment)
+                        ->update([
+                            'status_order'=>'PR'
+                        ]);
+        $payment->admin_id=Auth::guard('admin')->id();
+
+        return redirect('/admin/event/pesanan')->with('alert_success','Berhasil tolak pesanan : '.$payment->id_payment);
     }
 }

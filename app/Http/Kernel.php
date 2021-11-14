@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\IsCreator;
+use App\Http\Middleware\IsNotCreator;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -66,5 +68,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'auth.admin' => \App\Http\Middleware\AuthenticateAdmin::class,
         'guest.admin' => \App\Http\Middleware\RedirectifAuthenticateAdmin::class,
+        'creator'=> IsCreator::class,
+        'not.creator'=>IsNotCreator::class,
     ];
 }

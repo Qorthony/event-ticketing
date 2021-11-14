@@ -93,9 +93,11 @@ function create_fragment(ctx) {
   var hr;
   var t;
   var div;
-  var if_block =
+  var if_block = (
   /*order*/
-  ctx[0].status_order === 'MP' && create_if_block(ctx);
+  ctx[0].status_order === 'MP' ||
+  /*order*/
+  ctx[0].status_order === 'PR') && create_if_block(ctx);
   return {
     c: function c() {
       hr = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("hr");
@@ -116,7 +118,9 @@ function create_fragment(ctx) {
 
       if (
       /*order*/
-      ctx[0].status_order === 'MP') {
+      ctx[0].status_order === 'MP' ||
+      /*order*/
+      ctx[0].status_order === 'PR') {
         if (if_block) {
           if_block.p(ctx, dirty);
         } else {
@@ -777,6 +781,10 @@ function create_fragment(ctx) {
   var a2;
   var t13;
   var li2;
+  var img3;
+  var img3_src_value;
+  var t14;
+  var a3;
   var t16;
   var li3;
   var t19;
@@ -825,7 +833,10 @@ function create_fragment(ctx) {
       a2.textContent = "History Pemesanan";
       t13 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       li2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("li");
-      li2.innerHTML = "<img class=\"icon-size svelte-z1h8xw\" src=\"https://img.icons8.com/material/24/000000/property-time.png\" alt=\"\"/> \n                        <a class=\"nav-link text-dark ms-1\" href=\"/\">Event Creator</a>";
+      img3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("img");
+      t14 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      a3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("a");
+      a3.textContent = "Event Creator";
       t16 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       li3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("li");
       li3.innerHTML = "<img class=\"icon-size svelte-z1h8xw\" src=\"https://img.icons8.com/material-two-tone/24/000000/handshake.png\" alt=\"\"/> \n                        <a class=\"nav-link text-dark ms-1\" href=\"/\">Mitra</a>";
@@ -859,6 +870,11 @@ function create_fragment(ctx) {
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a2, "class", "nav-link text-dark ms-1");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a2, "href", "/event/orderHistory");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(li1, "class", "nav-item d-flex align-items-center svelte-z1h8xw");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img3, "class", "icon-size svelte-z1h8xw");
+      if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img3.src, img3_src_value = "https://img.icons8.com/material/24/000000/property-time.png")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img3, "src", img3_src_value);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img3, "alt", "");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a3, "class", "nav-link text-dark ms-1");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a3, "href", "/creator");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(li2, "class", "nav-item d-flex align-items-center svelte-z1h8xw");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(li3, "class", "nav-item d-flex align-items-center svelte-z1h8xw");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img5, "class", "icon-size svelte-z1h8xw");
@@ -901,6 +917,9 @@ function create_fragment(ctx) {
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(li1, a2);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(ul, t13);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(ul, li2);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(li2, img3);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(li2, t14);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(li2, a3);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(ul, t16);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(ul, li3);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(ul, t19);
@@ -924,7 +943,9 @@ function create_fragment(ctx) {
         /*navigate*/
         ctx[0]('/event'))), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(a2, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(
         /*navigate*/
-        ctx[0]('/event/orderHistory'))), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(a5, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(
+        ctx[0]('/event/orderHistory'))), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(a3, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(
+        /*navigate*/
+        ctx[0]('/creator'))), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(a5, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(
         /*navigate*/
         ctx[0]('/logout', 'post')))];
         mounted = true;
