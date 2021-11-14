@@ -20,7 +20,7 @@ class EventsController extends Controller
     public function show()
     {
         return Inertia::render('Event/Show', [
-            'events'=>Event::latest()->get()
+            'events'=>Event::where('status_verifikasi', 'acc')->orderBy('id_event','desc')->get()
         ]);
     }
 

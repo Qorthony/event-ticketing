@@ -81,7 +81,7 @@ function create_if_block_3(ctx) {
       if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
     }
   };
-} // (160:28) {#if errors.bank_pengirim}
+} // (150:28) {#if errors.bank_pengirim}
 
 
 function create_if_block_2(ctx) {
@@ -111,7 +111,7 @@ function create_if_block_2(ctx) {
       if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
     }
   };
-} // (172:28) {#if errors.no_rek}
+} // (162:28) {#if errors.no_rek}
 
 
 function create_if_block_1(ctx) {
@@ -141,7 +141,7 @@ function create_if_block_1(ctx) {
       if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
     }
   };
-} // (185:28) {#if errors.bukti_payment}
+} // (175:28) {#if errors.bukti_payment}
 
 
 function create_if_block(ctx) {
@@ -171,7 +171,7 @@ function create_if_block(ctx) {
       if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
     }
   };
-} // (39:0) <Layout>
+} // (29:0) <Layout>
 
 
 function create_default_slot(ctx) {
@@ -713,13 +713,7 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
   var order = $$props.order;
   var _$$props$errors = $$props.errors,
-      errors = _$$props$errors === void 0 ? {} : _$$props$errors; // let form = useForm({
-  //     nama_pengirim:null,
-  //     no_rek:null,
-  //     bank_pengirim:null,
-  //     bukti_payment:null
-  // });
-
+      errors = _$$props$errors === void 0 ? {} : _$$props$errors;
   var data = {
     nama_pengirim: null,
     no_rek: null,
@@ -728,10 +722,7 @@ function instance($$self, $$props, $$invalidate) {
   };
 
   function submit() {
-    console.log(data.bukti_payment); // $form.post("/event/payment/"+order.id_order, {
-    //     forceFormData: true,
-    // });
-
+    console.log(data.bukti_payment);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__.Inertia.post("/event/payment/" + order.id_order, data, {
       forceFormData: true
     });

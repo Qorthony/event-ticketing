@@ -8,13 +8,6 @@
     export let order;
     export let errors = {}
 
-
-    // let form = useForm({
-    //     nama_pengirim:null,
-    //     no_rek:null,
-    //     bank_pengirim:null,
-    //     bukti_payment:null
-    // });
     let data = {
         nama_pengirim:null,
         no_rek:null,
@@ -24,9 +17,6 @@
 
     function submit() {
         console.log(data.bukti_payment);
-        // $form.post("/event/payment/"+order.id_order, {
-        //     forceFormData: true,
-        // });
         Inertia.post("/event/payment/"+order.id_order, data, {
             forceFormData: true,
         })

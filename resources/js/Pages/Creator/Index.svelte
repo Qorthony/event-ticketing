@@ -5,15 +5,26 @@ import { getUrlPoster } from "../../Shared/Helpers/posterEvent";
 
     import Layout from "../../Shared/Layout/Layout.svelte";
 
-    export let event;
+    import { inertia } from "@inertiajs/inertia-svelte";
+
+    export let events;
+
+    // export let success
+    // console.log(success);
 </script>
 
 <Layout>
     <h4 class="text-e-blue mb-4 fw-bold">Dashboard Event Creator</h4>
-    <button class="btn btn-e-blue mb-5">Buat Event</button>
+    <a use:inertia href="/creator/buatEvent" class="btn btn-e-blue mb-5">Buat Event</a>
 
     <h5 class="fw-bold text-e-blue mt-3">My Events</h5>
     <hr style="border: 1px solid #F05454;opacity:1">
+    {#if events.length==0}
+        <div class="d-flex justify-content-center">
+            <h4>Belum ada event yang dibuat</h4>
+        </div>
+    {/if}
+    {#each events as event}
     <div class="card mb-5">
         <img src={getUrlPoster(event.poster_url)} class="card-img-top" alt="...">
         <div class="card-body">
@@ -35,5 +46,7 @@ import { getUrlPoster } from "../../Shared/Helpers/posterEvent";
             <a href={"#"} class="btn btn-e-blue"> <img src="https://img.icons8.com/small/24/000000/bar-chart.png" alt=""/> Laporan</a>
         </div>
     </div>
+    {/each}
+
 
 </Layout>

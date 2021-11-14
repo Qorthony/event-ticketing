@@ -46,7 +46,7 @@ class EventController extends Controller
             'deskripsi' => 'required'
         ]);
 
-        dd($validated);
+        // dd($validated);
 
         $path = $request->file('poster')->store('events','public');
 
