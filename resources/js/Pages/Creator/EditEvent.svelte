@@ -1,13 +1,17 @@
 <script>
+    import { onMount } from 'svelte';
     import { Inertia } from "@inertiajs/inertia";
+    import { parseTgl, parseWaktu } from "../../Shared/Helpers/dateAndTime";
 
     import Layout from "../../Shared/Layout/StepLayout.svelte";
 
     export let errors
+    export let event
+
 
     let imageSelected
 
-    let form = {
+    let form={
         nama_event:null,
         jenis_event:null,
         tgl_event:null,
@@ -16,8 +20,14 @@
         kuota:null,
         penyelenggara:null,
         deskripsi:null,
-        poster:null
+        poster:null,
     }
+
+    onMount(()=>{
+        form = { ...form, ...event}
+        form.tgl_event = `${parseTgl(form.tgl_event)}T${parseWaktu(form.tgl_event)}`
+        // console.log(form);
+    })
 
     function showImageSelected(file) {
         let reader= new FileReader();
@@ -30,7 +40,7 @@
 
     function submit() {
         console.log(form);
-        Inertia.post('/creator/buatEvent', form, {
+        Inertia.post('/creator/editEvent/'+event.id_event, form, {
             forceFormData: true,
         })
     }
@@ -40,7 +50,7 @@
 </script>
 
 <Layout previous="/creator">
-    <h4 class="fw-bold mb-4 text-e-blue">Form Buat Event</h4>
+    <h4 class="fw-bold mb-4 text-e-blue">Form Edit Event</h4>
     <div class="card mb-5">
         <div class="card-body">
             <form on:submit|preventDefault={submit} enctype="multipart/form-data">
@@ -72,7 +82,7 @@
                 <div class="mb-3">
                     <label for="kuota" class="form-label fw-bold">Kuota</label>
                     <input bind:value={form.kuota} type="number" class="form-control" id="kuota">
-                    {#if errors.nama_event}<div class="alert alert-danger">{errors.nama_event}</div>{/if}
+                    {#if errors.kuota}<div class="alert alert-danger">{errors.kuota}</div>{/if}
                 </div>
                 <div class="mb-3">
                     <label for="penyelenggara" class="form-label fw-bold">Penyelenggara</label>
@@ -88,6 +98,8 @@
                     <label for="poster" class="form-label fw-bold">Poster</label>
                     {#if form.poster}
                         <img class="img-fluid mb-3" src={imageSelected} alt="poster">
+                    {:else}
+                        <img class="img-fluid mb-3" src={"/storage/"+form.poster_url} alt="poster">
                     {/if}
                     <input bind:files class="form-control" type="file" id="poster" accept="image/*">
                     {#if errors.poster}<div class="alert alert-danger">{errors.poster}</div>{/if}

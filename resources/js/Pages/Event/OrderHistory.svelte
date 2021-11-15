@@ -35,6 +35,9 @@
 <Layout>
     <div class="row mb-5 justify-content-center">
         <div class="col-11">
+            {#if orders.length===0}
+                <div class="alert alert-primary">Belum pernah melakukan pemesanan tiket event!</div>
+            {/if}
             {#each orders as order}
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">

@@ -28,7 +28,8 @@ Route::post('/event/{event}/order', [EventsController::class, 'order']);
 Route::get('/creator', [CreatorController::class, 'index'])->middleware(['auth','creator']);
 Route::get('/creator/buatEvent', [CreatorController::class, 'buatEvent'])->middleware(['auth','creator']);
 Route::post('/creator/buatEvent', [CreatorController::class, 'storeEvent'])->middleware(['auth','creator']);
-Route::get('/creator/editEvent', [CreatorController::class, 'editEvent'])->middleware(['auth','creator']);
+Route::get('/creator/editEvent/{event}', [CreatorController::class, 'editEvent'])->middleware(['auth','creator']);
+Route::post('/creator/editEvent/{event}', [CreatorController::class, 'updateEvent'])->middleware(['auth','creator']);
 
 Route::get('/creator/first', [CreatorController::class, 'first'])->middleware(['auth','not.creator']);
 Route::post('/creator/regist', [CreatorController::class, 'regist'])->middleware(['auth','not.creator']);

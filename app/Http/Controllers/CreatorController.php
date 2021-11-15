@@ -83,4 +83,35 @@ class CreatorController extends Controller
         // dd($event);
         return redirect('/creator')->with('success', 'Berhasil membuat event');
     }
+
+    public function editEvent(Event $event)
+    {
+        // dd($event);
+        return Inertia::render('Creator/EditEvent',[
+            'event'=>$event
+        ]);
+    }
+
+    public function updateEvent(Request $request, Event $event)
+    {
+        $validatedData = $request->validate([
+            'nama_event' => 'required|string',
+            'jenis_event' => 'required|string|max:20',
+            'tgl_event' => 'required|date',
+            'lokasi' => 'required|string',
+            'harga' => 'required|integer',
+            'kuota' => 'required|integer',
+            'penyelenggara' => 'required|string',
+            'deskripsi' => 'required'
+        ]);
+
+        if ($request->poster!==null) {
+            $path = $request->file('poster')->store('events','public');
+            $validatedData['poster_url'] = $path;
+        }
+
+        Event::where('id_event', $event->id_event)->update($validatedData);
+
+        return redirect('/creator')->with('success','berhasil update event');
+    }
 }

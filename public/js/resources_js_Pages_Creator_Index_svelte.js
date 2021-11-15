@@ -299,8 +299,19 @@ function create_each_block(ctx) {
   var div4;
   var t13;
   var div5;
+  var a0;
+  var img1;
+  var img1_src_value;
+  var t14;
+  var a0_href_value;
+  var inertia_action;
+  var t15;
+  var a1;
+  var a1_href_value;
   var t17;
   var current;
+  var mounted;
+  var dispose;
   status = new _Components_Creator_Status_svelte__WEBPACK_IMPORTED_MODULE_4__["default"]({
     props: {
       status:
@@ -337,7 +348,12 @@ function create_each_block(ctx) {
       div4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       t13 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      div5.innerHTML = "<a href=\"".concat("#", "\" class=\"btn btn-e-blue\"><img src=\"https://img.icons8.com/material-outlined/24/000000/pencil--v1.png\" alt=\"\"/> Edit</a> \n            <a href=\"", "#", "\" class=\"btn btn-e-blue\"><img src=\"https://img.icons8.com/small/24/000000/bar-chart.png\" alt=\"\"/> Laporan</a>");
+      a0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("a");
+      img1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("img");
+      t14 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(" Edit");
+      t15 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+      a1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("a");
+      a1.innerHTML = "<img src=\"https://img.icons8.com/small/24/000000/bar-chart.png\" alt=\"\"/> Laporan";
       t17 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img0.src, img0_src_value = (0,_Shared_Helpers_posterEvent__WEBPACK_IMPORTED_MODULE_2__.getUrlPoster)(
       /*event*/
@@ -351,6 +367,14 @@ function create_each_block(ctx) {
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "d-flex justify-content-between mb-1");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "class", "card-body");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_style)(div4, "border", "2px dashed #E8E8E8");
+      if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img1.src, img1_src_value = "https://img.icons8.com/material-outlined/24/000000/pencil--v1.png")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img1, "src", img1_src_value);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img1, "alt", "");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a0, "href", a0_href_value = "/creator/editEvent/" +
+      /*event*/
+      ctx[1].id_event);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a0, "class", "btn btn-e-blue");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a1, "href", a1_href_value = "#");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a1, "class", "btn btn-e-blue");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", "card-body");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div6, "class", "card mb-5");
     },
@@ -382,8 +406,18 @@ function create_each_block(ctx) {
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, div4);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, t13);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, div5);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, a0);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(a0, img1);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(a0, t14);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, t15);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, a1);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, t17);
       current = true;
+
+      if (!mounted) {
+        dispose = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.action_destroyer)(inertia_action = _inertiajs_inertia_svelte__WEBPACK_IMPORTED_MODULE_5__.inertia.call(null, a0));
+        mounted = true;
+      }
     },
     p: function p(ctx, dirty) {
       if (!current || dirty &
@@ -421,6 +455,14 @@ function create_each_block(ctx) {
       1) && t10_value !== (t10_value = (0,_Shared_Helpers_dateAndTime__WEBPACK_IMPORTED_MODULE_1__.parseWaktu)(
       /*event*/
       ctx[1].tgl_event) + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t10, t10_value);
+
+      if (!current || dirty &
+      /*events*/
+      1 && a0_href_value !== (a0_href_value = "/creator/editEvent/" +
+      /*event*/
+      ctx[1].id_event)) {
+        (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a0, "href", a0_href_value);
+      }
     },
     i: function i(local) {
       if (current) return;
@@ -434,6 +476,8 @@ function create_each_block(ctx) {
     d: function d(detaching) {
       if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div6);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_component)(status);
+      mounted = false;
+      dispose();
     }
   };
 } // (18:0) <Layout>
@@ -539,7 +583,7 @@ function create_default_slot(ctx) {
       }
 
       if (dirty &
-      /*parseWaktu, events, parseTgl, getUrlPoster*/
+      /*events, parseWaktu, parseTgl, getUrlPoster*/
       1) {
         each_value =
         /*events*/

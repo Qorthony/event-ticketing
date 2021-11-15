@@ -30,4 +30,8 @@ class Event extends Model
     {
         return $this->hasMany(Order::class);
     }
+
+    // protected $casts = [
+    //     'tgl_event' => 'datetime',
+    // ];
 }

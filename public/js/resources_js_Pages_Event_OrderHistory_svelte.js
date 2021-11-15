@@ -240,7 +240,25 @@ function get_each_context(ctx, list, i) {
   var child_ctx = ctx.slice();
   child_ctx[1] = list[i];
   return child_ctx;
-} // (38:12) {#each orders as order}
+} // (38:12) {#if orders.length===0}
+
+
+function create_if_block(ctx) {
+  var div;
+  return {
+    c: function c() {
+      div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+      div.textContent = "Belum pernah melakukan pemesanan tiket event!";
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "alert alert-primary");
+    },
+    m: function m(target, anchor) {
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
+    },
+    d: function d(detaching) {
+      if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
+    }
+  };
+} // (41:12) {#each orders as order}
 
 
 function create_each_block(ctx) {
@@ -490,7 +508,11 @@ function create_each_block(ctx) {
 function create_default_slot(ctx) {
   var div1;
   var div0;
+  var t;
   var current;
+  var if_block =
+  /*orders*/
+  ctx[0].length === 0 && create_if_block(ctx);
   var each_value =
   /*orders*/
   ctx[0];
@@ -510,6 +532,8 @@ function create_default_slot(ctx) {
     c: function c() {
       div1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
       div0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+      if (if_block) if_block.c();
+      t = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 
       for (var _i = 0; _i < each_blocks.length; _i += 1) {
         each_blocks[_i].c();
@@ -521,6 +545,8 @@ function create_default_slot(ctx) {
     m: function m(target, anchor) {
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div1, anchor);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, div0);
+      if (if_block) if_block.m(div0, null);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div0, t);
 
       for (var _i2 = 0; _i2 < each_blocks.length; _i2 += 1) {
         each_blocks[_i2].m(div0, null);
@@ -529,6 +555,19 @@ function create_default_slot(ctx) {
       current = true;
     },
     p: function p(ctx, dirty) {
+      if (
+      /*orders*/
+      ctx[0].length === 0) {
+        if (if_block) {} else {
+          if_block = create_if_block(ctx);
+          if_block.c();
+          if_block.m(div0, t);
+        }
+      } else if (if_block) {
+        if_block.d(1);
+        if_block = null;
+      }
+
       if (dirty &
       /*orders, parseTgl, msgStatusOrder, getUrlPoster*/
       1) {
@@ -585,6 +624,7 @@ function create_default_slot(ctx) {
     },
     d: function d(detaching) {
       if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div1);
+      if (if_block) if_block.d();
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_each)(each_blocks, detaching);
     }
   };
