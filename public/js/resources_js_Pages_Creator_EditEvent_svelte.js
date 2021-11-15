@@ -575,7 +575,7 @@ function create_default_slot(ctx) {
       if (if_block9) if_block9.c();
       t38 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       div9 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-      div9.innerHTML = "<button type=\"submit\" class=\"btn btn-e-blue\">Buat Event</button>";
+      div9.innerHTML = "<button type=\"submit\" class=\"btn btn-e-blue\">Update Event</button>";
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(h4, "class", "fw-bold mb-4 text-e-blue");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(label0, "for", "nama_event");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(label0, "class", "form-label fw-bold");

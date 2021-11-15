@@ -45,7 +45,7 @@ import { getUrlPoster } from "../../Shared/Helpers/posterEvent";
         <div style="border: 2px dashed #E8E8E8;"></div>
         <div class="card-body">
             <a use:inertia href={"/creator/editEvent/"+event.id_event} class="btn btn-e-blue"> <img src="https://img.icons8.com/material-outlined/24/000000/pencil--v1.png" alt=""/> Edit</a>
-            <a href={"#"} class="btn btn-e-blue"> <img src="https://img.icons8.com/small/24/000000/bar-chart.png" alt=""/> Laporan</a>
+            <a use:inertia href={"/creator/stats/"+event.id_event} class="btn btn-e-blue"> <img src="https://img.icons8.com/small/24/000000/bar-chart.png" alt=""/> Laporan</a>
         </div>
     </div>
     {/each}

@@ -307,7 +307,11 @@ function create_each_block(ctx) {
   var inertia_action;
   var t15;
   var a1;
+  var img2;
+  var img2_src_value;
+  var t16;
   var a1_href_value;
+  var inertia_action_1;
   var t17;
   var current;
   var mounted;
@@ -353,7 +357,8 @@ function create_each_block(ctx) {
       t14 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(" Edit");
       t15 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       a1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("a");
-      a1.innerHTML = "<img src=\"https://img.icons8.com/small/24/000000/bar-chart.png\" alt=\"\"/> Laporan";
+      img2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("img");
+      t16 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(" Laporan");
       t17 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
       if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img0.src, img0_src_value = (0,_Shared_Helpers_posterEvent__WEBPACK_IMPORTED_MODULE_2__.getUrlPoster)(
       /*event*/
@@ -373,7 +378,11 @@ function create_each_block(ctx) {
       /*event*/
       ctx[1].id_event);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a0, "class", "btn btn-e-blue");
-      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a1, "href", a1_href_value = "#");
+      if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img2.src, img2_src_value = "https://img.icons8.com/small/24/000000/bar-chart.png")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img2, "src", img2_src_value);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img2, "alt", "");
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a1, "href", a1_href_value = "/creator/stats/" +
+      /*event*/
+      ctx[1].id_event);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a1, "class", "btn btn-e-blue");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", "card-body");
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div6, "class", "card mb-5");
@@ -411,11 +420,13 @@ function create_each_block(ctx) {
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(a0, t14);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, t15);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, a1);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(a1, img2);
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(a1, t16);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, t17);
       current = true;
 
       if (!mounted) {
-        dispose = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.action_destroyer)(inertia_action = _inertiajs_inertia_svelte__WEBPACK_IMPORTED_MODULE_5__.inertia.call(null, a0));
+        dispose = [(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.action_destroyer)(inertia_action = _inertiajs_inertia_svelte__WEBPACK_IMPORTED_MODULE_5__.inertia.call(null, a0)), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.action_destroyer)(inertia_action_1 = _inertiajs_inertia_svelte__WEBPACK_IMPORTED_MODULE_5__.inertia.call(null, a1))];
         mounted = true;
       }
     },
@@ -463,6 +474,14 @@ function create_each_block(ctx) {
       ctx[1].id_event)) {
         (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a0, "href", a0_href_value);
       }
+
+      if (!current || dirty &
+      /*events*/
+      1 && a1_href_value !== (a1_href_value = "/creator/stats/" +
+      /*event*/
+      ctx[1].id_event)) {
+        (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a1, "href", a1_href_value);
+      }
     },
     i: function i(local) {
       if (current) return;
@@ -477,7 +496,7 @@ function create_each_block(ctx) {
       if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div6);
       (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_component)(status);
       mounted = false;
-      dispose();
+      (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.run_all)(dispose);
     }
   };
 } // (18:0) <Layout>

@@ -114,4 +114,9 @@ class CreatorController extends Controller
 
         return redirect('/creator')->with('success','berhasil update event');
     }
+
+    public function eventStats(Event $events)
+    {
+        return Inertia::render('Creator/EventStats');
+    }
 }

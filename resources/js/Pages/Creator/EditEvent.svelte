@@ -105,7 +105,7 @@
                     {#if errors.poster}<div class="alert alert-danger">{errors.poster}</div>{/if}
                 </div>
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-e-blue">Buat Event</button>
+                    <button type="submit" class="btn btn-e-blue">Update Event</button>
                 </div>
             </form>
         </div>
