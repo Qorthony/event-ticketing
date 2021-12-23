@@ -11,6 +11,15 @@ class Order extends Model
 
     protected $primaryKey = 'id_order';
 
+    protected $fillable = [
+        'id_order',
+        'tgl_order',
+        'status_order',
+        'user_id',
+        'event_id',
+        'payment_id'
+    ];
+
     public function event()
     {
         return $this->belongsTo(Event::class, 'event_id');
