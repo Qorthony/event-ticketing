@@ -21,8 +21,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/event', [EventsController::class,'show'])->name('home');
 Route::get('/event/orderHistory', [EventsController::class, 'orderHistory']);
+Route::get('/event/payment/otomatis/finish', [PaymentGatewayController::class, 'finish'])->name('midtrans-finish')->middleware('auth');
+Route::get('/event/payment/otomatis/status', [PaymentGatewayController::class, 'cekStatus']);
 Route::post('/event/payment/otomatis/callback', [PaymentGatewayController::class, 'callback'])->name('midtrans-callback');
-Route::post('/event/payment/otomatis/{order}', [PaymentGatewayController::class, 'process'])->name('payment-otomatis');
+Route::post('/event/payment/otomatis/{order}', [PaymentGatewayController::class, 'process'])->name('payment-otomatis')->middleware('auth');
 Route::get('/event/payment/{order}', [EventsController::class, 'showPayment']);
 Route::post('/event/payment/{order}', [EventsController::class, 'uploadPayment']);
 Route::get('/event/{event}', [EventsController::class,'detail']);

@@ -76,7 +76,7 @@ function create_if_block_3(ctx) {
       if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
     }
   };
-} // (106:16) {#if errors.bank_pengirim}
+} // (107:16) {#if errors.bank_pengirim}
 
 
 function create_if_block_2(ctx) {
@@ -106,7 +106,7 @@ function create_if_block_2(ctx) {
       if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
     }
   };
-} // (122:16) {#if errors.no_rek}
+} // (123:16) {#if errors.no_rek}
 
 
 function create_if_block_1(ctx) {
@@ -136,7 +136,7 @@ function create_if_block_1(ctx) {
       if (detaching) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
     }
   };
-} // (137:16) {#if errors.bukti_payment}
+} // (138:16) {#if errors.bukti_payment}
 
 
 function create_if_block(ctx) {
@@ -349,13 +349,13 @@ function create_fragment(ctx) {
       if (!mounted) {
         dispose = [(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(input0, "input",
         /*input0_input_handler*/
-        ctx[4]), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(input1, "input",
+        ctx[5]), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(input1, "input",
         /*input1_input_handler*/
-        ctx[5]), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(input2, "input",
+        ctx[6]), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(input2, "input",
         /*input2_input_handler*/
-        ctx[6]), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(input3, "change",
+        ctx[7]), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(input3, "change",
         /*input3_change_handler*/
-        ctx[7]), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(form, "submit", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(
+        ctx[8]), (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(form, "submit", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(
         /*submit*/
         ctx[3]))];
         mounted = true;
@@ -474,6 +474,7 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
   var _$$props$errors = $$props.errors,
       errors = _$$props$errors === void 0 ? {} : _$$props$errors;
+  var order = $$props.order;
   var data = {
     nama_pengirim: null,
     no_rek: null,
@@ -512,6 +513,7 @@ function instance($$self, $$props, $$invalidate) {
 
   $$self.$$set = function ($$props) {
     if ('errors' in $$props) $$invalidate(0, errors = $$props.errors);
+    if ('order' in $$props) $$invalidate(4, order = $$props.order);
   };
 
   $$self.$$.update = function () {
@@ -522,7 +524,7 @@ function instance($$self, $$props, $$invalidate) {
     }
   };
 
-  return [errors, files, data, submit, input0_input_handler, input1_input_handler, input2_input_handler, input3_change_handler];
+  return [errors, files, data, submit, order, input0_input_handler, input1_input_handler, input2_input_handler, input3_change_handler];
 }
 
 var ManualPayment = /*#__PURE__*/function (_SvelteComponent) {
@@ -537,7 +539,8 @@ var ManualPayment = /*#__PURE__*/function (_SvelteComponent) {
 
     _this = _super.call(this);
     (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(_assertThisInitialized(_this), options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, {
-      errors: 0
+      errors: 0,
+      order: 4
     });
     return _this;
   }
@@ -787,7 +790,13 @@ function create_default_slot(ctx) {
       ctx[0].id_order
     }
   });
-  manual = new _Components_Payment_ManualPayment_svelte__WEBPACK_IMPORTED_MODULE_4__["default"]({});
+  manual = new _Components_Payment_ManualPayment_svelte__WEBPACK_IMPORTED_MODULE_4__["default"]({
+    props: {
+      order:
+      /*order*/
+      ctx[0]
+    }
+  });
   return {
     c: function c() {
       div16 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
@@ -974,6 +983,13 @@ function create_default_slot(ctx) {
       /*order*/
       ctx[0].id_order;
       otomatis.$set(otomatis_changes);
+      var manual_changes = {};
+      if (dirty &
+      /*order*/
+      1) manual_changes.order =
+      /*order*/
+      ctx[0];
+      manual.$set(manual_changes);
     },
     i: function i(local) {
       if (current) return;

@@ -104,7 +104,7 @@
                             role="tabpanel"
                             aria-labelledby="manual-tab"
                         >
-                            <Manual/>
+                            <Manual order={order}/>
                         </div>
                     </div>
                 </div>

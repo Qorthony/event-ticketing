@@ -104,6 +104,7 @@ class EventsController extends Controller
     public function orderHistory()
     {
         $orders = Order::join('events','orders.event_id','=','events.id_event')
+                        ->where('orders.user_id', Auth::guard('web')->id())
                         ->get();
         // dd($orders);
         return Inertia::render('Event/OrderHistory',[

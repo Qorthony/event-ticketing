@@ -3,6 +3,7 @@
     import { Inertia } from "@inertiajs/inertia";
 
     export let errors = {};
+    export let order
 
     let data = {
         nama_pengirim: null,
