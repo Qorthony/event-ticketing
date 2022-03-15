@@ -126,30 +126,8 @@ class PaymentGatewayController extends Controller
     {
         $id = explode("-",$request->order_id);
         $order = Order::findOrFail($id[1]);
-        $status = $request->transaction_status;
 
-        if ($status=='capture') {
-            $order->status_order = 'ACC';
-        }
-
-        elseif ($status=='settlement') {
-            $order->status_order = 'ACC';
-        }
-
-        elseif ($status=='pending') {
-            $order->status_order = 'MP';
-        }
-        elseif ($status=='deny') {
-            $order->status_order = 'PR';
-        }
-        elseif ($status=='expire') {
-            $order->status_order = 'PB';
-        }
-        elseif ($status=='cancel') {
-            $order->status_order = 'PB';
-        }
-
-        $order->save();
+        $this->updateTransactionStatus($request->order_id);
 
         return Inertia::render('Event/FinishPayment', ['order'=>$order]);
 
@@ -157,13 +135,49 @@ class PaymentGatewayController extends Controller
 
     public function cekStatus(Request $request)
     {
+        $transaction = $this->updateTransactionStatus($request->order_id);
+
+        return ['status'=>$transaction];
+    }
+
+    private function updateTransactionStatus($order_id)
+    {
         //Konfigurasi Midtrans
         Config::$serverKey = config('services.midtrans.serverKey');
         Config::$isProduction = config('services.midtrans.isProduction');
         Config::$isSanitized = config('services.midtrans.isSanitized');
         Config::$is3ds = config('services.midtrans.is3ds');
 
-        $status = Transaction::status($request->order_id);
-        return ['status'=>$status];
+        $id = explode("-",$order_id);
+        $order = Order::findOrFail($id[1]);
+
+        $transaction = Transaction::status($order_id);
+        $transaction_object = (object) $transaction;
+        // dd($transaction_object->transaction_status);
+
+        if ($transaction_object->transaction_status=='capture') {
+            $order->status_order = 'ACC';
+        }
+
+        elseif ($transaction_object->transaction_status=='settlement') {
+            $order->status_order = 'ACC';
+        }
+
+        elseif ($transaction_object->transaction_status=='pending') {
+            $order->status_order = 'MP';
+        }
+        elseif ($transaction_object->transaction_status=='deny') {
+            $order->status_order = 'PR';
+        }
+        elseif ($transaction_object->transaction_status=='expire') {
+            $order->status_order = 'PB';
+        }
+        elseif ($transaction_object->transaction_status=='cancel') {
+            $order->status_order = 'PB';
+        }
+
+        $order->save();
+
+        return $transaction;
     }
 }
